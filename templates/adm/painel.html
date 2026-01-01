@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/telascores.css') }}">
+
+    <title>Tela inicial - Nível ADM - </title>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="letreiro">Lar Boa Viagem</div>
+
+        <div class="buttons-container">
+            <div class="row-1">
+
+
+                <a href="{{ url_for('adm.ver_quartos') }}" class="menu-button">
+                    <img class="img-icon" src="../static/img/quartodoscara.png" width="100" height="100" />
+                    <span class="button-label">Quartos</span>
+                </a>
+                <!--cadastrar quarto-->
+                <a href="{{ url_for('adm.novo_quarto') }}" class="menu-button">
+                    <img class="img-icon" src="../static/img/cadastrar_quartos.png" width="100" height="100" />
+                    <span class="button-label">Cadastrar Quartos</span>
+                </a>
+
+                <a href="{{ url_for('adm.formulario_hospede') }}" class="menu-button">
+                    <img class="img-icon" src="../static/img/cadastrar_hospedes.png" width="100" height="100" />
+                    <span class="button-label">Cadastrar Hóspedes</span>
+                </a>
+
+            </div>
+
+            <div class="row-2">
+
+
+                <a href="{{ url_for('adm.ver_colaboradores') }}" class="menu-button">
+                    <img class="img-icon" src="../static/img/ver_colaboradores.png" width="100" height="100" />
+                    <span class="button-label">Ver Colaboradores</span>
+                </a>
+
+                    <a href="{{ url_for('adm.novo_cuidador') }}" class="menu-button">
+                    <img class="img-icon" src="../static/img/cadastrar_colaboradores.png" width="100" height="100" />
+                    <span class="button-label">Cadastrar Cuidadores</span>
+                </a>
+
+                <a href="{{ url_for('adm.novo_gestor') }}" class="menu-button">
+                    <img class="img-icon" src="../static/img/cadastrar_colaboradores.png" width="100" height="100" />
+                    <span class="button-label">Cadastrar Gestores</span>
+                </a>
+            </div>
+    </main>
+
+</body>
+
+</html>

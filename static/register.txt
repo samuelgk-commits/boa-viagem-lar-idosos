@@ -1,0 +1,49 @@
+#@app é a variavel para inicalizar no flask
+
+#.route = rota (/blog, /cadastro) / seria a rota principal que abriria o site
+
+#render_template serve para buscar os arquivos html na pasta template e enviar variaveis do bak pro front
+
+#url_for serve para usar as funções por exemplo Ola() para usar de caminho
+
+#com o render_templete podemos fazer variaveis aqui no python, retornando essa variaveis na função render templete com o nome do arquivo html e as variaveis, podendo ser acessadas com a sintax {{}},{% %} ou {# #}, tambem permitindo lopings, somas, e varias funções python
+
+#blueprint serve para agrupar urls, para melhora organização
+
+vizualização de rotas no hospedes:
+
+- /hospedes/ (GET) - lista os hospedes
+- /hospedes/ (POST) - insere hospedes ao servidor
+- /hospedes/new (GET) - furmulario para criar um hospede
+- /hospedes/<id> (GET) - obter dados de um hospede por id
+- /hospedes/<id>/edit (GET) - formulario para editar hospede
+- /hospedes/<id>/update (PUT) - atualiza os dados de hospedes
+- /hospedes/<id>/delete (DELETE) apaga registros de um hospede
+---------------------------------------------------------------
+                        pastas e arquivos
+
+-bibliotecas e frameworks: flask, peewee
+
+-main.py serve como a pagina principal, todas as outras pastas existem para o main.py executalas
+
+-venv é o ambiente virtual
+
+-templates é onde fica todos os htmls
+
+-statics é onde fica css, js, imgs
+
+-routes são as rotas ou paginas da aplicação ex: localhost:5000/ é a pagina inicial, a rota home, a rota hospedes seria algo como: localhost:5000/hospedes
+
+-database, é onde fica todas as instancias relacionadas ao banco
+
+-configurações vai guardar todas as configurações do main.py como pagina para melhor organização
+
+--------------------------------------------------------------------------
+
+    hospedess = Hospedes.select()
+    print(Hospedes)
+    print("Registros encontrados:", len(hospedess))
+
+    for h in hospedess:
+        print(h.nome, h.email)
+        

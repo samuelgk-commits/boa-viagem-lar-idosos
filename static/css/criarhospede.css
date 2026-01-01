@@ -1,0 +1,285 @@
+        
+/* Estilos de fonte base */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis de Cores (Identidade Visual) - Replicando as cores consistentes */
+:root {
+    --brand-primary: #1e88e5; /* Azul principal vibrante e profissional */
+    --brand-dark: #1565c0; /* Azul escuro para hover de botões e foco */
+    --text-color: #212529; /* Texto mais escuro e legível */
+    --label-color: #495057; /* Cor para labels (cinza escuro) */
+    --background-color: #f4f7f6; /* Fundo levemente acinzentado (off-white) */
+    --card-bg: #ffffff; /* Fundo do card branco puro */
+    --border-color: #dee2e6; /* Borda leve dos inputs */
+    --focus-ring: rgba(30, 136, 229, 0.4); /* Anel de foco suave */
+    --border-radius: 10px; /* Cantos arredondados consistentes */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave e elegante */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Usando a nova fonte Poppins */
+}
+
+/* --- ESTILO DO CORPO: CENTRALIZAÇÃO E FUNDO --- */
+body {
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo, mas permite rolagem se necessário */
+    min-height: 100vh;
+    background-color: var(--background-color);
+    padding: 20px 0; /* Espaçamento vertical para que o container não encoste nas bordas */
+}
+
+/* Estilo do Contêiner Principal (O card branco) */
+.container {
+    width: 900px; 
+    max-width: 95%; 
+    background-color: var(--card-bg); /* Fundo branco puro */
+    border: 1px solid var(--border-color); /* Borda sutil */
+    border-radius: var(--border-radius);
+    color: var(--text-color); /* Cor principal do texto */
+    padding: 40px; 
+    box-shadow: var(--shadow); /* Sombra suave */
+    
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    margin: 20px auto; 
+    min-height: auto; 
+}
+
+/* Título Principal */
+.letreiro {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.container h1 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--brand-primary); /* Cor primária */
+    font-weight: 700;
+    margin-bottom: 0;
+    text-shadow: none; 
+}
+
+/* Garante que o formulário ocupe 100% da largura */
+.container form {
+    width: 100%;
+}
+
+/* --- CHAVE DO LAYOUT: GRID PRECISO PARA POSICIONAMENTO EM COLUNAS --- */
+.form-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Define 3 colunas de largura igual */
+    gap: 20px; /* Espaço entre as colunas e linhas */
+    width: 100%;
+    align-items: start; 
+}
+
+/* Novo wrapper para agrupar o título e os campos de cada coluna */
+.column-wrapper {
+    /* Define que o wrapper em si é um contêiner flexível para organizar o conteúdo */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Garante que o wrapper comece sempre na primeira linha do grid */
+    grid-row: 1; 
+}
+
+/* Posicionamento dos Wrappers nas Colunas */
+.column-wrapper:nth-child(1) { grid-column: 1; }
+.column-wrapper:nth-child(2) { grid-column: 2; }
+.column-wrapper:nth-child(3) { grid-column: 3; }
+
+
+/* Título das Sub-seções (Responsável e Saúde) */
+.section-title {
+    font-size: 18px;
+    color: var(--brand-primary); /* Usa a cor primária para destaque */
+    text-align: left; 
+    margin: 0 0 10px 0; /* Remove a margem superior (já controlada pelo gap do grid) */
+    padding-bottom: 5px;
+    font-weight: 600;
+    text-shadow: none; 
+    border-bottom: 1px solid var(--border-color); /* Borda sutil */
+    width: 100%;
+}
+
+/* --- ESTILO DOS CAMPOS DE INPUT E ELEMENTOS DE FORMULÁRIO (SEM MUDANÇAS AQUI) --- */
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-box label {
+    display: block; 
+    font-size: 14px;
+    color: var(--label-color); /* Cinza escuro */
+    margin-bottom: 5px; 
+    font-weight: 500;
+    text-shadow: none;
+}
+
+/* Estilo para INPUT (campos normais e de data), SELECT e TEXTAREA */
+.input-box input,
+.input-box select,
+.input-box textarea {
+    width: 100%;
+    background-color: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: var(--border-radius); 
+    outline: none;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.input-box input,
+.input-box select {
+    height: 50px; 
+    padding: 0 45px 0 15px; 
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+    border-color: var(--brand-dark); 
+    box-shadow: 0 0 0 4px var(--focus-ring); 
+    outline: none;
+}
+
+/* Estilo para SELECT */
+.input-box select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 45px; 
+    /* Seta SVG personalizada (cor da label) */
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23495057' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center; 
+}
+
+.input-box option {
+    background-color: var(--card-bg); 
+    color: var(--text-color);
+}
+
+.input-box input::placeholder {
+    color: #adb5bd;
+}
+
+/* Estilo para TEXTAREA */
+.input-box textarea {
+    height: auto; 
+    min-height: 80px; 
+    padding: 10px 15px;
+    resize: vertical; 
+}
+
+
+/* Estilo do Ícone (posicionado no centro vertical do input) */
+.input-box .bx {
+    position: absolute;
+    right: 15px; 
+    /* Ajustado para centralizar com o input de 50px de altura */
+    top: calc(50% + 15px); 
+    transform: translateY(-50%); 
+    font-size: 20px;
+    color: var(--label-color); 
+    pointer-events: none; 
+    text-shadow: none; 
+}
+
+/* Ícones removidos de textareas */
+.input-box.textarea-box .bx {
+    display: none; 
+}
+
+/* --- ESTILO DO BOTÃO DE ENVIAR --- */
+.button-container {
+    grid-column: 1 / -1; /* Ocupa todas as colunas no grid */
+    width: 100%;
+    text-align: center; 
+    margin-top: 30px;
+}
+
+.login {
+    width: 50%; 
+    max-width: 300px; 
+    padding: 15px; 
+    background-color: var(--brand-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius); 
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(30, 136, 229, 0.3); 
+    transition: all 0.2s ease;
+}
+
+.login:hover {
+    background-color: var(--brand-dark);
+    box-shadow: 0 6px 15px rgba(30, 136, 229, 0.4);
+}
+
+.login:active {
+    transform: scale(0.98);
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 950px) {
+    /* Tablet e Telas Médias: Muda para 2 Colunas */
+    .form-content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* * Reposiciona os wrappers para 2 colunas */
+    .column-wrapper:nth-child(1) { grid-column: 1; grid-row: 1; } /* Hóspede, Coluna 1 */
+    .column-wrapper:nth-child(2) { grid-column: 2; grid-row: 1; } /* Responsável, Coluna 2 */
+    
+    /* * Coluna 3 (Saúde/Obs) Ocupa a largura total (2 colunas) na próxima linha */
+    .column-wrapper:nth-child(3) { 
+        grid-column: 1 / -1; /* Ocupa 2 colunas */
+        grid-row: 2; /* Fica na linha de baixo */
+    }
+    
+    /* O título pode precisar de um ajuste de margem após o reposicionamento */
+    .column-wrapper:nth-child(3) .section-title {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+    /* Mobile: Muda para 1 Coluna (empilha todos os itens) */
+    .form-content-grid {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    /* Todos os itens voltam para a primeira coluna, empilhados */
+    .column-wrapper:nth-child(1),
+    .column-wrapper:nth-child(2),
+    .column-wrapper:nth-child(3) {
+        grid-column: 1;
+        grid-row: auto; 
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .section-title {
+        margin-top: 15px;
+        text-align: left; /* Mantém alinhado à esquerda dentro do wrapper */
+    }
+}

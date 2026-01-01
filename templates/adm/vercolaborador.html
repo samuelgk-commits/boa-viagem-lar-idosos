@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil do Colaborador</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vercolaborador.css') }}">
+</head>
+
+<body>
+
+    <h1>Colaboradores</h1>
+
+    <div class="grid-container">
+        {% for colab in colaboradores %}
+        <div class="card {{ colab.cargo }}">
+            <h3>{{ colab.nome }} <small>({{ colab.cargo }})</small></h3>
+            <p><strong>ID:</strong> {{ colab.id }}</p>
+            {% if colab.email %}<p><strong>Email:</strong> {{ colab.email }}</p>{% endif %}
+            {% if colab.telefone %}<p><strong>Telefone:</strong> {{ colab.telefone }}</p>{% endif %}
+            {% if colab.turno %}<p><strong>Turno:</strong> {{ colab.turno }}</p>{% endif %}
+
+            <div class="buttons">
+            
+                <form action="{{ url_for('adm.editar_colaborador', cargo=colab.cargo, id=colab.id) }}" method="get" style="display:inline-block;">
+                    <button type="submit" class="edit-btn">Editar</button>
+                </form>
+
+            
+                <form action="{{ url_for('adm.excluir_colaborador', cargo=colab.cargo, id=colab.id) }}" method="post" style="display:inline-block;">
+                    <button type="submit" class="delete-btn">Excluir</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>

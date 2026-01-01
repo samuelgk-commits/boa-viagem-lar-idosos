@@ -1,0 +1,29 @@
+
+<!--c-form obtem os dados do formulario-->
+<form class="c-form" 
+      {% if hospede %}
+          action="{{ url_for('hospedes.editar_hospedes', hospede_id=hospede.id_hospede) }}" 
+      {% else %}
+          action="{{ url_for('hospedes.inserir_hospede') }}" 
+      {% endif %}
+      
+      method="{% if hospede %}PUT{% else %}POST{% endif %}"
+
+
+      c-append="#form-hospede">
+      <!--c-append basicamente coloca uma informação de codigo em algun lugar com o parametro atendido aqui por exemplo vai pro lista hospede por qu la tem um id=lista-hospedes em algun lugar fo codigo-->
+
+  <div class="mb-3">
+    <label class="form-label">Nome</label>
+    <input type="text" class="form-control" name="nome" {% if hospede %}value="{{hospede.nome}}"{% endif %}>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="text" class="form-control" name="email" {% if hospede %}value="{{hospede.email}}"{% endif %}>
+    <!--o 'name' é exencial para que o html saiba a denominação de cada input-->
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Criar hospede</button>
+</form>

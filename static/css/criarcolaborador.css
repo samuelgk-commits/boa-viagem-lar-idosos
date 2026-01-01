@@ -1,0 +1,166 @@
+/*
+ * Arquivo CSS para estilização da página de Cadastro de Colaboradores.
+ * Estilos refinados para consistência com a identidade visual da aplicação.
+ */
+
+/* Estilos de fonte base */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis de Cores (Identidade Visual) */
+:root {
+    --brand-primary: #1e88e5; /* Azul principal vibrante e profissional */
+    --brand-dark: #1565c0; /* Azul escuro para hover de botões e foco */
+    --text-color: #212529; /* Texto mais escuro e legível */
+    --label-color: #495057; /* Cor para labels (cinza escuro) */
+    --background-color: #f4f7f6; /* Fundo levemente acinzentado (off-white) */
+    --card-bg: #ffffff; /* Fundo do card branco puro */
+    --border-color: #dee2e6; /* Borda leve dos inputs */
+    --focus-ring: rgba(30, 136, 229, 0.4); /* Anel de foco suave */
+    --border-radius: 10px; /* Cantos arredondados consistentes */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave e elegante */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 1200px; 
+    width: 95%;
+    border: 1px solid var(--border-color); /* Borda sutil para definir o card */
+}
+
+.letreiro h1 {
+    text-align: center;
+    color: var(--brand-primary);
+    margin-bottom: 30px;
+    font-weight: 700; /* Título mais forte */
+}
+
+/* -------------------------------------- */
+/* LAYOUT DE DUAS COLUNAS */
+/* Mantido o layout funcional anterior */
+/* -------------------------------------- */
+
+.parent {
+    display: flex;
+    gap: 40px; 
+    margin-bottom: 20px;
+}
+
+.div1, .div2 {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .parent {
+        flex-direction: column; 
+        gap: 0;
+    }
+}
+
+/* -------------------------------------- */
+/* ESTILO DOS CAMPOS DE INPUT (Identidade Visual) */
+/* -------------------------------------- */
+
+.input-box {
+    position: relative;
+    width: 100%; 
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600; /* Labels mais destacadas */
+    color: var(--label-color);
+}
+
+.input-box input,
+.input-box select {
+    width: 100%; 
+    padding: 14px 40px 14px 15px; /* Padding ajustado */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    transition: all 0.3s ease; /* Transição mais suave para foco */
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    border-color: var(--brand-dark); /* Borda mais escura ao focar */
+    box-shadow: 0 0 0 4px var(--focus-ring); /* Anel de foco consistente */
+    outline: none;
+}
+
+/* Estilo para ícones dentro do input-box */
+.input-box .bx {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(15%); 
+    font-size: 20px;
+    color: var(--label-color); /* Cor do ícone */
+    pointer-events: none; 
+}
+
+/* Ajuste específico para o ícone de data */
+input[type="date"] + .bx {
+    display: none; 
+}
+
+/* -------------------------------------- */
+/* ESTILO DO BOTÃO (Identidade Visual) */
+/* -------------------------------------- */
+
+.button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.login {
+    width: 100%;
+    max-width: 400px; 
+    padding: 15px;
+    background-color: var(--brand-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(30, 136, 229, 0.3); /* Sombra para o botão */
+    transition: all 0.2s ease;
+}
+
+.login:hover {
+    background-color: var(--brand-dark);
+    box-shadow: 0 6px 15px rgba(30, 136, 229, 0.4);
+}
+
+.login:active {
+    transform: scale(0.98);
+}

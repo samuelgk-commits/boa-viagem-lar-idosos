@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/criarcolaborador.css') }}">
+
+    <title>Cadastrar Gestores</title>
+</head>
+
+<body>
+<main class="container">
+    <form action="{{ url_for('adm.novo_gestor') }}" method="post">
+        <div class="letreiro"><h1>Cadastrar Gestor</h1></div>
+
+        <div class="parent">
+            <div class="div1">
+                <div class="input-box">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome do Gestor" maxlength="150" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="email@exemplo.com" maxlength="150" required>
+                    <i class="bx bxs-envelope"></i>
+                </div>
+
+                <div class="input-box">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" minlength="8" maxlength="255" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="login">Enviar</button>
+        </div>
+    </form>
+</main>
+</body>
+
+</html>

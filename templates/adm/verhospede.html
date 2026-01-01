@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil do Hóspede</title>
+    <link rel="stylesheet" href="c:\Users\Samsung\Downloads\BV - 3.1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/verhospede.css') }}">
+
+</head>
+
+<body>
+
+    <main class="container-custom">
+        <div class="letreiro">
+            <h1><i class='bx bxs-user-detail'></i> Perfil do Hóspede</h1>
+        </div>
+
+        
+        <div class="parent">
+
+      
+            <div class="section-title section-header-saude">Saúde e Observações</div>
+            <div class="section-title section-header-resp">Dados do Responsável</div>
+
+            
+            <div class="div1 data-box">
+                <label class="label">ID</label>
+                <div class="value">{{ hospede.id_hospede }}</div>
+            </div>
+
+           
+            <div class="div2 data-box">
+                <div class="label"><i class='bx bxs-user'></i> Nome Completo</div>
+                <div class="value">{{ hospede.nome }}</div>
+            </div>
+
+            
+            <div class="div3 data-box">
+                <div class="label"><i class='bx bxs-calendar'></i> Data de Nascimento</div>
+                <div class="value">{{ hospede.data_nascimento }}</div>
+            </div>
+
+            
+            <div class="div4 data-box">
+                <div class="label"><i class='bx bx-male-sign'></i> Sexo</div>
+                <div class="value">{{ hospede.sexo }}</div>
+            </div>
+
+           
+            <div class="div5 data-box">
+                <div class="label"><i class='bx bxs-log-in-circle'></i> Data de Entrada</div>
+                <div class="value">{{ hospede.criado_em }}</div>
+            </div>
+
+            
+            <div class="div6 data-box textarea-box">
+                <div class="label"><i class='bx bxs-heart-medical'></i> Condições Médicas</div>
+                <div class="value">{{ hospede.condicoes_medicas }}</div>
+            </div>
+
+          
+            <div class="div7 data-box textarea-box">
+                <div class="label"><i class='bx bxs-band-aid'></i> Alergias</div>
+                <div class="value">{{ hospede.alergias }}</div>
+            </div>
+
+            
+            <div class="div8 data-box textarea-box">
+                <div class="label"><i class='bx bxs-comment-detail'></i> Observações Adicionais</div>
+                <div class="value">{{ hospede.observacoes }}</div>
+            </div>
+
+            
+            <div class="div9 data-box">
+                <div class="label"><i class='bx bxs-group'></i> Nome do Responsável</div>
+                <div class="value">{{ hospede.responsavel_nome }}</div>
+            </div>
+
+           
+            <div class="div10 data-box">
+                <div class="label"><i class='bx bxs-phone'></i> Telefone do Responsável</div>
+                <div class="value">{{ hospede.responsavel_telefone }}</div>
+            </div>
+
+
+           
+            <div class="action-buttons">
+                <button class="btn-alterar" onclick="alert('Funcionalidade de Alterar Acionada')">
+                    <i class='bx bxs-edit-alt'></i> Alterar Dados
+                </button>
+                <button class="btn-excluir" onclick="alert('Funcionalidade de Excluir Acionada')">
+                    <i class='bx bxs-trash'></i> Excluir Hóspede
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

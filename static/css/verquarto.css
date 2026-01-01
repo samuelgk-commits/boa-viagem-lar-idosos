@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+
+        /* Reset Básico e Configuração da Fonte */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "BBH Sans Hegarty", sans-serif;
+        }
+
+        /* --- ESTILO DO CORPO: CENTRALIZAÇÃO E FUNDO (IDÊNTICO AO CADASTRO) --- */
+        body {
+            display: grid; 
+            place-items: center; 
+            min-height: 100vh;
+            background-color: #e6f0ff;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23cce0ff" d="M0,50 C20,70 80,70 100,50 L100,100 L0,100 Z" opacity="0.5"/><path fill="%23b3cce6" d="M0,60 C30,80 70,80 100,60 L100,100 L0,100 Z" opacity="0.5"/><path fill="%2399b3cc" d="M0,70 C40,90 60,90 100,70 L100,100 L0,100 Z" opacity="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Contêiner (Igual ao do formulário de cadastro) */
+        .container-custom {
+            width: 800px; /* Um pouco menor, focado na lista */
+            max-width: 95%; 
+            background-color: transparent;
+            border: 2px solid rgba(125, 183, 255, .2);
+            border-radius: 10px;
+            color: #7db7ff;
+            padding: 30px 40px; 
+            box-shadow: 0 0 10px rgb(0, 0, 0, .2);
+            margin: 20px auto; 
+        }
+
+        /* Título Principal */
+        .letreiro h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #7db7ff;
+            /* Contorno preto para manter o destaque */
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+        }
+
+        /* --- ESTILOS DO ACCORDION PARA MANTER A IDENTIDADE --- */
+        .accordion-item {
+            border-color: rgba(125, 183, 255, .5); /* Borda azul claro */
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
+            margin-bottom: 10px; /* Espaço entre os itens */
+            border-radius: 10px !important;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            border-radius: 10px;
+        }
+
+        /* Estilo do Botão do Cabeçalho (Quarto) */
+        .accordion-button {
+            background-color: rgba(125, 183, 255, 0.1); /* Fundo levemente azulado */
+            color: #7db7ff !important;
+            font-weight: 600;
+            font-size: 18px;
+            border: none;
+            box-shadow: none;
+            transition: background-color 0.1s ease-in-out;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #e6f0ff !important;
+            background-color: #7db7ff; /* Cor primária ao expandir */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-button:focus {
+            border-color: #8dabcf;
+            box-shadow: 0 0 0 0.25rem rgba(125, 183, 255, .25);
+        }
+
+        /* Estilo do Corpo do Accordion (Conteúdo interno) */
+        .accordion-body {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #e6f0ff;
+            padding: 15px 20px;
+        }
+
+        /* Estilo para a Linha de Hóspede (Label + Botão) */
+        .hospede-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            border-bottom: 1px dashed rgba(125, 183, 255, .2);
+        }
+
+        .hospede-row:last-child {
+            border-bottom: none;
+        }
+
+        .hospede-nome {
+            font-size: 16px;
+            color: #e6f0ff;
+            font-weight: 500;
+            /* Contorno preto */
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+        }
+
+
+        /* --- ESTILO DO BOTÃO (IDÊNTICO AO BOTÃO 'CADASTRAR HÓSPEDE') --- */
+        .view-guest-btn {
+            padding: 8px 15px;
+            background-color: rgb(209, 238, 243);
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #0d1a2c; 
+            font-weight: 600;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+            transition: 0.1s;
+        }
+
+        .view-guest-btn:hover {
+            background-color: transparent;
+            border: 2px solid #8dabcf;
+            color: #8dabcf; 
+        }
+
+        /* Ícones no cabeçalho */
+        .header-info i {
+            margin-right: 8px;
+            color: #8dabcf;
+        }
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.quartos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.quarto-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quarto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.quarto-card h3 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+}
+
+.btn-ver-hospedes {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-ver-hospedes:hover {
+    background-color: #2980b9;
+}

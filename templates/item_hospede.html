@@ -1,0 +1,25 @@
+<tr>
+    <th scope="row">{{ hospede.id_hospede }}</th>
+    <td>{{ hospede.nome }}</td>
+    <td>{{ hospede.data_nascimento }}</td>
+    <td>{{ hospede.sexo }}</td>
+    <td>{{ hospede.responsavel_nome }}</td>
+    <td>{{ hospede.responsavel_telefone }}</td>
+    <td>{{ hospede.condicoes_medicas or 'Nenhuma' }}</td>
+    <td>{{ hospede.alergias or 'Nenhuma' }}</td>
+    <td>{{ hospede.observacoes or '---' }}</td>
+    <td>{{ hospede.criado_em }}</td>
+    <td>{{ hospede.atualizado_em }}</td>
+
+    <td>
+        <a href="{{ url_for('hospedes.editar_hospedes', hospede_id=hospede.id_hospede) }}"
+           class="btn btn-warning">
+            Editar
+        </a>
+
+        <button class="btn btn-danger"
+            c-delete="{{ url_for('hospedes.deletar_hospedes', hospede_id=hospede.id_hospede) }}">
+            Deletar
+        </button>
+    </td>
+</tr>
