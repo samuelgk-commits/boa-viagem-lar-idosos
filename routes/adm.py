@@ -19,7 +19,7 @@ def painel():
 def formulario_hospede():
     if session.get("cargo") != "ADM":
         return redirect(url_for('login.entrar'))
-    quartos = Quartos.select()  # pega todos os quartos
+    quartos = Quartos.select()
     return render_template('adm/criarhospede.html', quartos=quartos)
 
 

@@ -1,10 +1,9 @@
+from Database.database import db
 from routes.home import rota_home 
 from routes.hospedes import rota_hospedes
-from routes.login import rota_login
 from routes.adm import rota_adm
 from routes.gestor import rota_gestor
 from routes.cuidador import rota_cuidador
-from Database.database import db
 from Database.models.hospedes import Hospedes
 from Database.models.adm import Adm
 from Database.models.gestor import Gestor
@@ -18,15 +17,15 @@ def configure_all(app):
     configure_db()
 
 def configure_routes(app):
-    app.register_blueprint(rota_home)
-    app.register_blueprint(rota_hospedes, url_prefix='/hospedes') 
-    app.register_blueprint(rota_login) 
+    #função que agrupa os blueprints para melhor organização dentro do main
+    app.register_blueprint(rota_home,url_prefix='/login')
+    app.register_blueprint(rota_hospedes, url_prefix='/hospedes')  
     app.register_blueprint(rota_adm, url_prefix="/adm")
     app.register_blueprint(rota_gestor, url_prefix="/gestor") 
     app.register_blueprint(rota_cuidador, url_prefix="/cuidador") 
 
 def configure_db():
-
+    #função para testar/abrir o banco 
     if db.is_closed():
         db.connect()
 
@@ -34,5 +33,3 @@ def configure_db():
         [Hospedes, Adm, Gestor, Quartos, Cuidados, Cuidadores, Atendimentos],
         safe=True 
     )
-
-   

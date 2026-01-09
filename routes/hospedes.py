@@ -2,8 +2,6 @@ from flask import Blueprint, render_template, request
 from Database.models.hospedes import Hospedes
 from Database.database import db
 
-#mapa de rotas register.txt linha 15>
-
 rota_hospedes = Blueprint('hospedes', __name__)
 
 @rota_hospedes.route('/')
