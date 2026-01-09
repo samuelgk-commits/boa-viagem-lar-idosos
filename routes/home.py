@@ -3,12 +3,12 @@ from Database.models.gestor import Gestor
 from Database.models.adm import Adm
 from Database.models.cuidadores import Cuidadores
 
-
 rota_home = Blueprint('home', __name__)
 
-@rota_home.route('/login', methods=['GET', 'POST'])
-def entrar():
-        
+@rota_home.route('/', methods=['GET', 'POST'])
+def login():
+    #essa função tem como objetivo pegar as informações do formulário e validar os dados de acordo com o banco, como cargo, nome e senha, e retornar um feedback caso haja erro ou as informações estejam incorretas  
+
     if request.method == 'POST':
         nome = request.form.get('nome')
         senha = request.form.get('senha')
