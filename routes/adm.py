@@ -10,6 +10,7 @@ rota_adm = Blueprint('adm', __name__)
 
 @rota_adm.route('/painel', methods=['GET'])
 def painel():
+    #abre o painel adm e verifica o 
     if session.get("cargo") != "adm":
         return redirect(url_for('home.entrar'))
     return render_template('adm/painel.html')
@@ -161,7 +162,7 @@ def editar_colaborador(cargo, id):
     else:
         return "Cargo inválido", 404
 
-    colaborador = model.get_or_none(id_field == id)  # usa o id correto
+    colaborador = model.get_or_none(id_field == id) 
 
     if not colaborador:
         return "Colaborador não encontrado", 404
@@ -205,9 +206,10 @@ def excluir_colaborador(cargo, id):
     model.delete().where(id_field == id).execute()
     return redirect(url_for('adm.ver_colaboradores'))
 
-# Listar todos os quartos
+
 @rota_adm.route('/quartos', methods=['GET'])
 def ver_quartos():
+    #lista todos os quartos
     if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
 
