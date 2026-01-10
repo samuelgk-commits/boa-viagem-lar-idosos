@@ -10,14 +10,14 @@ rota_adm = Blueprint('adm', __name__)
 
 @rota_adm.route('/painel', methods=['GET'])
 def painel():
-    if session.get("cargo") != "ADM":
-        return redirect(url_for('login.entrar'))
+    if session.get("cargo") != "adm":
+        return redirect(url_for('home.entrar'))
     return render_template('adm/painel.html')
 
 
 @rota_adm.route('/hospedes/new', methods=['GET'])
 def formulario_hospede():
-    if session.get("cargo") != "ADM":
+    if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
     quartos = Quartos.select()
     return render_template('adm/criarhospede.html', quartos=quartos)
@@ -26,7 +26,7 @@ def formulario_hospede():
 
 @rota_adm.route('/hospedes/new', methods=['POST'])
 def novo_hospede():
-    if session.get("cargo") != "ADM":
+    if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
     
     quarto_selecionado = Quartos.get_or_none(Quartos.id_quarto == request.form['id_quarto'])
@@ -50,7 +50,7 @@ def novo_hospede():
 
 @rota_adm.route('/quartos/new', methods=['GET', 'POST'])
 def novo_quarto():
-    if session.get("cargo") != "ADM":
+    if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
 
     if request.method == 'POST':
@@ -65,8 +65,8 @@ def novo_quarto():
 
 @rota_adm.route('/cuidador/new', methods=['GET', 'POST'])
 def novo_cuidador():
-    if session.get("cargo") != "ADM":
-        return redirect(url_for('login.entrar'))
+    if session.get("cargo") != "adm":
+        return redirect(url_for('home.login'))
 
     if request.method == 'POST':
         Cuidadores.create(
@@ -84,7 +84,7 @@ def novo_cuidador():
 
 @rota_adm.route('/gestor/new', methods=['GET', 'POST'])
 def novo_gestor():
-    if session.get("cargo") != "ADM":
+    if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
 
     if request.method == 'POST':
@@ -101,7 +101,7 @@ def novo_gestor():
 
 @rota_adm.route('/colaboradores', methods=['GET'])
 def ver_colaboradores():
-    if session.get("cargo") != "ADM":
+    if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
 
     # Buscar todos os registros
@@ -149,7 +149,7 @@ def ver_colaboradores():
 
 @rota_adm.route('/colaborador/<cargo>/<int:id>/editar', methods=['GET', 'POST'])
 def editar_colaborador(cargo, id):
-    if cargo == "ADM":
+    if cargo == "adm":
         model = Adm
         id_field = Adm.id_adm
     elif cargo == "Cuidador":
@@ -185,7 +185,7 @@ def editar_colaborador(cargo, id):
 
 @rota_adm.route('/colaborador/<cargo>/<int:id>/excluir', methods=['POST'])
 def excluir_colaborador(cargo, id):
-    if cargo == "ADM":
+    if cargo == "adm":
         model = Adm
         id_field = Adm.id_adm
     elif cargo == "Cuidador":
@@ -208,7 +208,7 @@ def excluir_colaborador(cargo, id):
 # Listar todos os quartos
 @rota_adm.route('/quartos', methods=['GET'])
 def ver_quartos():
-    if session.get("cargo") != "ADM":
+    if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
 
     quartos = list(Quartos.select().dicts())
@@ -218,7 +218,7 @@ def ver_quartos():
 # Ver hóspedes de um quarto específico
 @rota_adm.route('/quartos/<int:id_quarto>/hospedes', methods=['GET'])
 def ver_hospedes_quarto(id_quarto):
-    if session.get("cargo") != "ADM":
+    if session.get("cargo") != "adm":
         return redirect(url_for('login.entrar'))
 
     quarto = Quartos.get_or_none(Quartos.id_quarto == id_quarto)

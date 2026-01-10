@@ -14,12 +14,11 @@
 
 <body>
     <main class="container"> 
-
+           
 <form method="post">
 
     <h1>Login inicial</h1>
     
-
     <div class="input-box">
         <input placeholder="Usuário" type="text" name="nome" required>
         <i class="bx bxs-user"></i>
@@ -34,14 +33,20 @@
         <select name="cargo" required>
             <option value="cuidador">cuidador</option>
             <option value="gestor">Gestor</option>
-            <option value="ADM">ADM</option>
+            <option value="adm">ADM</option>
+
+
         </select>
     </div>
 
     <button type="submit" class="login">Login</button>
 
 </form>
-
+    <div class="input-box" id="error">
+        {% if error %}
+            <label for="darl"> {{ error }} </label>
+        {% endif %}
+    </div>
     </main>
 </body>
 

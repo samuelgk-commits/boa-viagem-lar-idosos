@@ -8,7 +8,7 @@ class Hospedes(BaseModel):
     id_hospede = AutoField()
     nome = CharField()
     data_nascimento = DateField()
-    sexo = CharField(max_length=10)  # enum('M','F','Outro')
+    sexo = CharField(max_length=10)  
     responsavel_nome = CharField(max_length=150)
     responsavel_telefone = CharField(max_length=20)
     condicoes_medicas = TextField(null=True)
