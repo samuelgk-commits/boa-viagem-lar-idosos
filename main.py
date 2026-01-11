@@ -1,6 +1,6 @@
 from flask import Flask
 from configuration import configure_all, password_session
-
+import webbrowser
 
 app = Flask(__name__)
 
@@ -11,4 +11,7 @@ app.secret_key = good_password
 
 configure_all(app)
 
-app.run(debug=True)
+
+if __name__ == "__main__":
+    webbrowser.open("http://127.0.0.1:5000")
+    app.run(debug=False)
