@@ -19,7 +19,7 @@ def painel():
 @rota_adm.route('/hospedes/new', methods=['GET'])
 def formulario_hospede():
     if session.get("cargo") != "adm":
-        return redirect(url_for('login.entrar'))
+        return redirect(url_for('home.login'))
     quartos = Quartos.select()
     return render_template('adm/criarhospede.html', quartos=quartos)
 
@@ -28,7 +28,7 @@ def formulario_hospede():
 @rota_adm.route('/hospedes/new', methods=['POST'])
 def novo_hospede():
     if session.get("cargo") != "adm":
-        return redirect(url_for('login.entrar'))
+        return redirect(url_for('home.login'))
     
     quarto_selecionado = Quartos.get_or_none(Quartos.id_quarto == request.form['id_quarto'])
 
@@ -52,7 +52,7 @@ def novo_hospede():
 @rota_adm.route('/quartos/new', methods=['GET', 'POST'])
 def novo_quarto():
     if session.get("cargo") != "adm":
-        return redirect(url_for('login.entrar'))
+        return redirect(url_for('home.login'))
 
     if request.method == 'POST':
         Quartos.create(
@@ -86,7 +86,7 @@ def novo_cuidador():
 @rota_adm.route('/gestor/new', methods=['GET', 'POST'])
 def novo_gestor():
     if session.get("cargo") != "adm":
-        return redirect(url_for('login.entrar'))
+        return redirect(url_for('home.login'))
 
     if request.method == 'POST':
         Gestor.create(
@@ -103,7 +103,7 @@ def novo_gestor():
 @rota_adm.route('/colaboradores', methods=['GET'])
 def ver_colaboradores():
     if session.get("cargo") != "adm":
-        return redirect(url_for('login.entrar'))
+        return redirect(url_for('home.login'))
 
     # Buscar todos os registros
     administradores = list(Adm.select().dicts())
@@ -117,7 +117,7 @@ def ver_colaboradores():
         colaboradores.append({
             'id': adm['id_adm'],
             'nome': adm['nome'],
-            'cargo': 'ADM',
+            'cargo': 'adm',
             'email': adm.get('email', ''),
             'telefone': '',
             'turno': '',
@@ -128,7 +128,7 @@ def ver_colaboradores():
         colaboradores.append({
             'id': c['id_cuidador'],
             'nome': c['nome'],
-            'cargo': 'Cuidador',
+            'cargo': 'cuidador',
             'email': '',
             'telefone': c['telefone'],
             'turno': c['turno'],
@@ -139,7 +139,7 @@ def ver_colaboradores():
         colaboradores.append({
             'id': g['id_gestor'],
             'nome': g['nome'],
-            'cargo': 'Gestor',
+            'cargo': 'gestor',
             'email': g['email'],
             'telefone': '',
             'turno': '',
@@ -150,29 +150,35 @@ def ver_colaboradores():
 
 @rota_adm.route('/colaborador/<cargo>/<int:id>/editar', methods=['GET', 'POST'])
 def editar_colaborador(cargo, id):
+    #função que edita colaboradores e testa o usuario adm,gestor,ou colaborador
+    cargo = cargo.lower()
+
     if cargo == "adm":
         model = Adm
-        id_field = Adm.id_adm
-    elif cargo == "Cuidador":
+        id_campo = Adm.id_adm
+    elif cargo == "cuidador":
         model = Cuidadores
-        id_field = Cuidadores.id_cuidador
-    elif cargo == "Gestor":
+        id_campo = Cuidadores.id_cuidador
+    elif cargo == "gestor":
         model = Gestor
-        id_field = Gestor.id_gestor
+        id_campo = Gestor.id_gestor
     else:
         return "Cargo inválido", 404
 
-    colaborador = model.get_or_none(id_field == id) 
+    colaborador = model.get_or_none(id_campo == id)
 
     if not colaborador:
         return "Colaborador não encontrado", 404
 
     if request.method == 'POST':
         colaborador.nome = request.form['nome']
+
         if hasattr(colaborador, 'email'):
             colaborador.email = request.form.get('email', colaborador.email)
+
         if hasattr(colaborador, 'telefone'):
             colaborador.telefone = request.form.get('telefone', colaborador.telefone)
+
         if hasattr(colaborador, 'turno'):
             colaborador.turno = request.form.get('turno', colaborador.turno)
 
@@ -181,29 +187,33 @@ def editar_colaborador(cargo, id):
 
         return redirect(url_for('adm.ver_colaboradores'))
 
-    return render_template('adm/editar_colaborador.html', colaborador=colaborador, cargo=cargo)
-
+    return render_template(
+        'adm/editar_colaborador.html',
+        colaborador=colaborador,
+        cargo=cargo,
+        colaborador_id=id
+    )
 
 @rota_adm.route('/colaborador/<cargo>/<int:id>/excluir', methods=['POST'])
 def excluir_colaborador(cargo, id):
     if cargo == "adm":
         model = Adm
-        id_field = Adm.id_adm
-    elif cargo == "Cuidador":
+        id_campo = Adm.id_adm
+    elif cargo == "cuidador":
         model = Cuidadores
-        id_field = Cuidadores.id_cuidador
-    elif cargo == "Gestor":
+        id_campo = Cuidadores.id_cuidador
+    elif cargo == "gestor":
         model = Gestor
-        id_field = Gestor.id_gestor
+        id_campo = Gestor.id_gestor
     else:
         return "Cargo inválido", 404
 
-    colaborador = model.get_or_none(id_field == id)
+    colaborador = model.get_or_none(id_campo == id)
 
     if not colaborador:
         return "Colaborador não encontrado", 404
 
-    model.delete().where(id_field == id).execute()
+    model.delete().where(id_campo == id).execute()
     return redirect(url_for('adm.ver_colaboradores'))
 
 
@@ -211,7 +221,7 @@ def excluir_colaborador(cargo, id):
 def ver_quartos():
     #lista todos os quartos
     if session.get("cargo") != "adm":
-        return redirect(url_for('login.entrar'))
+        return redirect(url_for('home.login'))
 
     quartos = list(Quartos.select().dicts())
     return render_template('adm/verquarto.html', quartos=quartos)
@@ -221,7 +231,7 @@ def ver_quartos():
 @rota_adm.route('/quartos/<int:id_quarto>/hospedes', methods=['GET'])
 def ver_hospedes_quarto(id_quarto):
     if session.get("cargo") != "adm":
-        return redirect(url_for('login.entrar'))
+        return redirect(url_for('home.login'))
 
     quarto = Quartos.get_or_none(Quartos.id_quarto == id_quarto)
     if not quarto:
