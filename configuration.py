@@ -14,15 +14,13 @@ from Database.models.quartos import Quartos
 import secrets, string
 
 def password_session(length = 24):
-    
+    #cria uma senha aleatoria para proteger os dados numa sessão, podem ser vistos porem não editados
     all_caracters = string.ascii_letters + string.digits + string.punctuation
-
     password = ''.join(secrets.choice(all_caracters) for i in range(length))
     return password
     
-
-
 def configure_all(app):
+    #junta todas as configurações feitas aqui para mandar pro main
     configure_routes(app)
     configure_db()
 

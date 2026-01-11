@@ -8,18 +8,24 @@ import datetime
 
 rota_adm = Blueprint('adm', __name__)
 
+def validar_ususario():
+    #validação basica para evitar que pessoas sem acesso ao cargo de adm/gestor/cuidador, tenham acesso aos seus respectivos privilegios 
+    if session.get("cargo") != "adm":
+        return redirect(url_for('home.login'))
+
 @rota_adm.route('/painel', methods=['GET'])
 def painel():
-    #abre o painel adm e verifica o 
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.entrar'))
+    #abre o painel(tela/menu) adm e verifica o ususario
+
+    validar_ususario()
     return render_template('adm/painel.html')
 
 
 @rota_adm.route('/hospedes/new', methods=['GET'])
 def formulario_hospede():
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
+    #abre o fumulario dos hospedes
+
+    validar_ususario()
     quartos = Quartos.select()
     return render_template('adm/criarhospede.html', quartos=quartos)
 
@@ -27,9 +33,9 @@ def formulario_hospede():
 
 @rota_adm.route('/hospedes/new', methods=['POST'])
 def novo_hospede():
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
     
+    #cria um novo hospede de acordo com o formulário preenchido
+    validar_ususario() 
     quarto_selecionado = Quartos.get_or_none(Quartos.id_quarto == request.form['id_quarto'])
 
     Hospedes.create(
@@ -51,24 +57,22 @@ def novo_hospede():
 
 @rota_adm.route('/quartos/new', methods=['GET', 'POST'])
 def novo_quarto():
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
+    #cria um novo quarto
 
+    validar_ususario()
     if request.method == 'POST':
         Quartos.create(
         num_quarto=request.form['numquarto'],
         andar=request.form['andar'],
         )
-
         return redirect(url_for('adm.painel'))
 
     return render_template('adm/criarquarto.html')
 
 @rota_adm.route('/cuidador/new', methods=['GET', 'POST'])
 def novo_cuidador():
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
-
+    #cria um cuidador 
+    validar_ususario()
     if request.method == 'POST':
         Cuidadores.create(
         nome=request.form['nome'],
@@ -78,39 +82,32 @@ def novo_cuidador():
         data_contratacao=request.form['data_contratacao'],
 
         )
-
         return redirect(url_for('adm.painel'))
 
     return render_template('adm/criarcuidador.html')
 
 @rota_adm.route('/gestor/new', methods=['GET', 'POST'])
 def novo_gestor():
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
-
+    #cria um gestor
+    validar_ususario()
     if request.method == 'POST':
         Gestor.create(
         nome=request.form['nome'],
         email=request.form['email'],
         senha=request.form['senha'],
-
         )
-
         return redirect(url_for('adm.painel'))
 
     return render_template('adm/criargestor.html')
 
 @rota_adm.route('/colaboradores', methods=['GET'])
 def ver_colaboradores():
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
-
-    # Buscar todos os registros
+    #cria uma lista com todos os usuarios do sistema, permitindo edita-los. ou excluí-los 
+    validar_ususario()
     administradores = list(Adm.select().dicts())
     cuidadores = list(Cuidadores.select().dicts())
     gestores = list(Gestor.select().dicts())
 
-    # Unir todos em uma lista padronizada
     colaboradores = []
 
     for adm in administradores:
@@ -145,12 +142,12 @@ def ver_colaboradores():
             'turno': '',
             'data_contratacao': g.get('criado_em')
         })
-
-    return render_template('adm/vercolaborador.html', colaboradores=colaboradores)
+    return render_template('adm/vercolaborador.html',colaboradores=colaboradores)
 
 @rota_adm.route('/colaborador/<cargo>/<int:id>/editar', methods=['GET', 'POST'])
 def editar_colaborador(cargo, id):
-    #função que edita colaboradores e testa o usuario adm,gestor,ou colaborador
+    #função que edita todos os usuarios
+    validar_ususario()
     cargo = cargo.lower()
 
     if cargo == "adm":
@@ -196,6 +193,8 @@ def editar_colaborador(cargo, id):
 
 @rota_adm.route('/colaborador/<cargo>/<int:id>/excluir', methods=['POST'])
 def excluir_colaborador(cargo, id):
+    #pode excluir todos os usuarios
+    validar_ususario()
     if cargo == "adm":
         model = Adm
         id_campo = Adm.id_adm
@@ -219,23 +218,20 @@ def excluir_colaborador(cargo, id):
 
 @rota_adm.route('/quartos', methods=['GET'])
 def ver_quartos():
-    #lista todos os quartos
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
+    #mostra todos o quartos cadastrados
 
+    validar_ususario()
     quartos = list(Quartos.select().dicts())
     return render_template('adm/verquarto.html', quartos=quartos)
 
-
-# Ver hóspedes de um quarto específico
 @rota_adm.route('/quartos/<int:id_quarto>/hospedes', methods=['GET'])
 def ver_hospedes_quarto(id_quarto):
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
+    #mostra o hospede, que esta no quarto que foi selecionado
+    validar_ususario()
 
     quarto = Quartos.get_or_none(Quartos.id_quarto == id_quarto)
     if not quarto:
         return "Quarto não encontrado", 404
 
-    hospedes = list(quarto.hospedes)  # Peewee faz o backref
+    hospedes = list(quarto.hospedes)
     return render_template('adm/hospede_quarto.html', quarto=quarto, hospedes=hospedes)

@@ -20,7 +20,6 @@ def login():
             error = "senha ou nome inválidos"
 
             match cargo:
-                #case para coletar as informções da database e testar se no banco tem o nome enviado, 
                 case 'adm':
                     nome_usuario = Adm.get_or_none(Adm.nome == nome)
                     if not nome_usuario:
@@ -35,31 +34,25 @@ def login():
                         return render_template('login.html', error = error)
                 
             if not senha:
-                #testar se senha retornou None
                 return render_template('login.html', error = error)
             
-        
             if nome_usuario.senha != senha:
-                #validação de senha 
                 return render_template('login.html', error = error)
-                
-                
-
-
-            session['cargo'] = cargo
-            #guardando as informações no session para a proxima pagina
-
-            if cargo == 'adm':
-                session['usuario_id'] = nome_usuario.id_adm
-                return redirect(url_for('adm.painel'))
             
-            elif cargo == 'gestor':
-                session['usuario_id'] = nome_usuario.id_gestor
-                return redirect(url_for('gestor.painel'))
-   
-            elif cargo == 'cuidador':
-                session['usuario_id'] = nome_usuario.id_cuidador
-                return redirect(url_for('cuidador.painel'))
+            session['cargo'] = cargo
+
+            match cargo:
+                case 'adm':
+                    session['usuario_id'] = nome_usuario.id_adm
+                    return redirect(url_for('adm.painel'))
+                
+                case 'gestor':
+                    session['usuario_id'] = nome_usuario.id_gestor
+                    return redirect(url_for('gestor.painel'))
+                
+                case 'cuidador':
+                    session['usuario_id'] = nome_usuario.id_cuidador
+                    return redirect(url_for('cuidador.painel'))
     except:
         return redirect(url_for('login.html'))
 
