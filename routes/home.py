@@ -9,7 +9,6 @@ rota_home = Blueprint('home', __name__)
 def login():
     #essa função tem como objetivo pegar as informações do formulário e validar os dados de acordo com o banco, como cargo, nome e senha, e retornar um feedback caso haja erro ou as informações estejam incorretas  
 
-    try:
         if request.method == 'POST':
 
             nome = request.form.get('nome')
@@ -53,7 +52,6 @@ def login():
                 case 'cuidador':
                     session['usuario_id'] = nome_usuario.id_cuidador
                     return redirect(url_for('cuidador.painel'))
-    except:
-        return redirect(url_for('login.html'))
 
-    return render_template('login.html')
+
+        return render_template('login.html')

@@ -1,9 +1,5 @@
-from peewee import MySQLDatabase
+from peewee import SqliteDatabase
+import os
 
-db = MySQLDatabase(
-    'larboaviagem',    
-    user='root',
-    password='',        
-    host='localhost',
-    port=3306
-)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db = SqliteDatabase(os.path.join(BASE_DIR, "boaviagem.db"))
