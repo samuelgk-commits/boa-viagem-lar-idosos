@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "BBH Sans Hegarty", sans-serif;
+}
+
+/* FUNDO */
+body {
+    min-height: 100vh;
+    background-color: #e6f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER */
+.container-custom {
+    width: 95%;
+    max-width: 1400px;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+/* TÍTULO */
+.titulo {
+    text-align: center;
+    font-size: 30px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* TABELA */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* CABEÇALHO */
+thead {
+    background-color: #3498db;
+}
+
+th {
+    padding: 12px;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* LINHAS */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f6fc;
+}
+
+tbody tr:hover {
+    background-color: #d6e9ff;
+    transition: 0.2s;
+}
+
+/* NOME DO HÓSPEDE */
+.nome {
+    font-weight: bold;
+    color: #2980b9;
+}

@@ -2,6 +2,7 @@ from peewee import Model , CharField , AutoField, TextField, DateTimeField , For
 from Database.database import db
 from Database.models.hospedes import Hospedes
 from Database.models.base_model import BaseModel
+import datetime
 
 class Atendimentos(BaseModel):
     id_atendimento = AutoField()
@@ -9,7 +10,7 @@ class Atendimentos(BaseModel):
     profissional = CharField(max_length=150)
     especialidade = CharField(max_length=150)
     descricao = TextField(null=True)
-    data_hora = DateTimeField()
+    data_hora = DateTimeField(null = True)
 
     class Meta:
         table_name = "atendimentos"

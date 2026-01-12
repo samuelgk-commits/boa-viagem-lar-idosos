@@ -8,7 +8,7 @@ class Cuidados(BaseModel):
     id_cuidado = AutoField()
     hospede = ForeignKeyField(Hospedes, backref="cuidados", column_name="id_hospede")
     cuidador = ForeignKeyField(Cuidadores, backref="cuidados", column_name="id_cuidador")
-    tipo = CharField(max_length=50)  # enum('banho','alimentacao','higiene','medicacao','companhia','outros')
+    tipo = CharField(max_length=50)  
     descricao = TextField(null=True)
     data_hora = DateTimeField()
 

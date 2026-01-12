@@ -1,36 +1,55 @@
-<h1>Hóspedes do Quarto {{ quarto.num_quarto }} - Andar {{ quarto.andar }}</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Hóspedes</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hospede_quarto.css') }}">
+</head>
+<body>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Data Nascimento</th>
-            <th>Sexo</th>
-            <th>Responsável</th>
-            <th>Telefone</th>
-            <th>Condições Médicas</th>
-            <th>Alergias</th>
-            <th>Observações</th>
-            <th>Criado Em</th>
-            <th>Atualizado Em</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for h in hospedes %}
-        <tr>
-            <td>{{ h.id_hospede }}</td>
-            <td>{{ h.nome }}</td>
-            <td>{{ h.data_nascimento }}</td>
-            <td>{{ h.sexo }}</td>
-            <td>{{ h.responsavel_nome }}</td>
-            <td>{{ h.responsavel_telefone }}</td>
-            <td>{{ h.condicoes_medicas }}</td>
-            <td>{{ h.alergias }}</td>
-            <td>{{ h.observacoes }}</td>
-            <td>{{ h.criado_em }}</td>
-            <td>{{ h.atualizado_em }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="container-custom">
+    <h1 class="titulo">
+        Hóspedes do Quarto {{ quarto.num_quarto }} — Andar {{ quarto.andar }}
+    </h1>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Nascimento</th>
+                    <th>Sexo</th>
+                    <th>Responsável</th>
+                    <th>Telefone</th>
+                    <th>Condições</th>
+                    <th>Alergias</th>
+                    <th>Observações</th>
+                    <th>Criado</th>
+                    <th>Atualizado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in hospedes %}
+                <tr>
+                    <td>{{ h.id_hospede }}</td>
+                    <td class="nome">{{ h.nome }}</td>
+                    <td>{{ h.data_nascimento }}</td>
+                    <td>{{ h.sexo }}</td>
+                    <td>{{ h.responsavel_nome }}</td>
+                    <td>{{ h.responsavel_telefone }}</td>
+                    <td>{{ h.condicoes_medicas }}</td>
+                    <td>{{ h.alergias }}</td>
+                    <td>{{ h.observacoes }}</td>
+                    <td>{{ h.criado_em }}</td>
+                    <td>{{ h.atualizado_em }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

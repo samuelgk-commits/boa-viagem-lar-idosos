@@ -15,8 +15,8 @@ class Hospedes(BaseModel):
     alergias = TextField(null=True)
     observacoes = TextField(null=True)
    
-    criado_em = DateTimeField()
-    atualizado_em = DateTimeField()
+    criado_em = DateTimeField(default=datetime.datetime.now)
+    atualizado_em = DateTimeField(default=datetime.datetime.now)
     id_quarto = ForeignKeyField(Quartos, backref="hospedes", column_name="id_quarto", null=True)
     class Meta:
         database = db

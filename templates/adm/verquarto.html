@@ -6,17 +6,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/verquarto.css') }}">
 </head>
 <body>
-    <h1>Lista de Quartos</h1>
 
-    <div class="quartos-container">
-        {% for quarto in quartos %}
-            <div class="quarto-card">
-                <h3>Quarto {{ quarto.num_quarto }} - Andar {{ quarto.andar }}</h3>
-                <a href="{{ url_for('adm.ver_hospedes_quarto', id_quarto=quarto.id_quarto) }}" class="btn-ver-hospedes">
-                    Ver Hóspedes
-                </a>
-            </div>
-        {% endfor %}
+    <div class="container-custom">
+        <h1 class="titulo">Lista de Quartos</h1>
+
+        <div class="quartos-container">
+            {% for quarto in quartos %}
+                <div class="quarto-card">
+                    <h3>Quarto {{ quarto.num_quarto }} - Andar {{ quarto.andar }}</h3>
+
+                    <a href="{{ url_for('adm.ver_hospedes_quarto', id_quarto=quarto.id_quarto) }}"
+                       class="btn-ver-hospedes">
+                        Ver Hóspedes
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+
 </body>
 </html>
