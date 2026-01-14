@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e6f0ff, #f2f6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 35px 40px 45px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0, 40, 120, 0.15);
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1f2d4f;
+    margin-bottom: 30px;
+}
+
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2a3f66;
+    margin-bottom: 6px;
+}
+
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 8px;
+    border: 1px solid #cdd9ed;
+    background: #f9fbff;
+    font-size: 14px;
+    color: #1f2d4f;
+    outline: none;
+    transition: 0.25s ease;
+    margin-bottom: 18px;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4f8cff;
+    box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.15);
+}
+
+
+button {
+    display: block;
+    margin: 25px auto 0;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4f8cff, #3b6fdc);
+    color: white;
+    box-shadow: 0 8px 20px rgba(79, 140, 255, 0.45);
+    transition: 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(79, 140, 255, 0.6);
+}

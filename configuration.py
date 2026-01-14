@@ -23,6 +23,11 @@ def criar_adm_padrao():
             senha="123",
             email="admin@boaviagem.com"
         )
+        Adm.create(
+            nome="Samuel Amaral",
+            senha="1234",
+            email="samuel@boaviagem.com"
+        )
 
 def password_session(length = 24):
     #cria uma senha aleatoria para proteger os dados numa sessão, podem ser vistos porem não editados

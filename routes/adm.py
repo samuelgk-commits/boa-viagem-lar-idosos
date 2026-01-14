@@ -8,16 +8,24 @@ import datetime
 
 rota_adm = Blueprint('adm', __name__)
 
-def validar_ususario():
-    #validação basica para evitar que pessoas sem acesso ao cargo de adm/gestor/cuidador, tenham acesso aos seus respectivos privilegios 
+def validar_adm():
+    #validação para que cada um só acesse oque seu privilegio permite
+    if 'cargo' not in session:
+        return redirect(url_for('home.login'))
+
     if session.get("cargo") != "adm":
         return redirect(url_for('home.login'))
+
+    return None
 
 @rota_adm.route('/painel', methods=['GET'])
 def painel():
     #abre o painel(tela/menu) adm e verifica o ususario
 
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
+    
     return render_template('adm/painel.html')
 
 
@@ -25,17 +33,22 @@ def painel():
 def formulario_hospede():
     #abre o fumulario dos hospedes
 
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
+    
     quartos = Quartos.select()
     return render_template('adm/criarhospede.html', quartos=quartos)
-
 
 
 @rota_adm.route('/hospedes/new', methods=['POST'])
 def novo_hospede():
     
     #cria um novo hospede de acordo com o formulário preenchido
-    validar_ususario() 
+    check = validar_adm()
+    if check:
+        return check 
+    
     quarto_selecionado = Quartos.get_or_none(Quartos.id_quarto == request.form['id_quarto'])
 
     Hospedes.create(
@@ -55,11 +68,15 @@ def novo_hospede():
 
     return redirect(url_for('adm.painel'))
 
+
 @rota_adm.route('/quartos/new', methods=['GET', 'POST'])
 def novo_quarto():
     #cria um novo quarto
 
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
+    
     if request.method == 'POST':
         Quartos.create(
         num_quarto=request.form['numquarto'],
@@ -69,10 +86,14 @@ def novo_quarto():
 
     return render_template('adm/criarquarto.html')
 
+
 @rota_adm.route('/cuidador/new', methods=['GET', 'POST'])
 def novo_cuidador():
     #cria um cuidador 
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
+    
     if request.method == 'POST':
         Cuidadores.create(
         nome=request.form['nome'],
@@ -86,10 +107,14 @@ def novo_cuidador():
 
     return render_template('adm/criarcuidador.html')
 
+
 @rota_adm.route('/gestor/new', methods=['GET', 'POST'])
 def novo_gestor():
     #cria um gestor
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
+    
     if request.method == 'POST':
         Gestor.create(
         nome=request.form['nome'],
@@ -100,54 +125,14 @@ def novo_gestor():
 
     return render_template('adm/criargestor.html')
 
-@rota_adm.route('/colaboradores', methods=['GET'])
-def ver_colaboradores():
-    #cria uma lista com todos os usuarios do sistema, permitindo edita-los. ou excluí-los 
-    validar_ususario()
-    administradores = list(Adm.select().dicts())
-    cuidadores = list(Cuidadores.select().dicts())
-    gestores = list(Gestor.select().dicts())
-
-    colaboradores = []
-
-    for adm in administradores:
-        colaboradores.append({
-            'id': adm['id_adm'],
-            'nome': adm['nome'],
-            'cargo': 'adm',
-            'email': adm.get('email', ''),
-            'telefone': '',
-            'turno': '',
-            'data_contratacao': adm.get('criado_em')
-        })
-
-    for c in cuidadores:
-        colaboradores.append({
-            'id': c['id_cuidador'],
-            'nome': c['nome'],
-            'cargo': 'cuidador',
-            'email': '',
-            'telefone': c['telefone'],
-            'turno': c['turno'],
-            'data_contratacao': c['data_contratacao']
-        })
-
-    for g in gestores:
-        colaboradores.append({
-            'id': g['id_gestor'],
-            'nome': g['nome'],
-            'cargo': 'gestor',
-            'email': g['email'],
-            'telefone': '',
-            'turno': '',
-            'data_contratacao': g.get('criado_em')
-        })
-    return render_template('adm/vercolaborador.html',colaboradores=colaboradores)
 
 @rota_adm.route('/colaborador/<cargo>/<int:id>/editar', methods=['GET', 'POST'])
 def editar_colaborador(cargo, id):
     #função que edita todos os usuarios
-    validar_ususario()
+  #  check = validar_adm()
+  #  if check:
+   #     return check
+    
     cargo = cargo.lower()
 
     if cargo == "adm":
@@ -191,10 +176,45 @@ def editar_colaborador(cargo, id):
         colaborador_id=id
     )
 
+
+@rota_adm.route('/hospede/<int:id>/editar', methods=['GET', 'POST'])
+def editar_hospede(id):
+        #edita algum hospede selecionado
+    check = validar_adm()
+    if check:
+        return check
+
+    hospede = Hospedes.get_or_none(Hospedes.id_hospede == id)
+    if not hospede:
+        return 'Hóspede não encontrado', 404
+    
+    if request.method == 'POST':
+        hospede.nome = request.form['nome']
+        hospede.data_nascimento = request.form['data_nascimento']
+        hospede.sexo = request.form['sexo']
+        hospede.responsavel_nome = request.form['responsavel_nome']
+        hospede.responsavel_telefone = request.form['responsavel_telefone']
+        hospede.condicoes_medicas = request.form.get('condicoes_medicas', '')
+        hospede.alergias = request.form.get('alergias', '')
+        hospede.observacoes = request.form.get('observacoes', '')
+        hospede.atualizado_em = datetime.datetime.now()
+        nome = session.get("nome")
+        cargo = session.get("cargo")
+        hospede.atualizado_por = f"{cargo}: {nome}"
+        hospede.save()
+
+        return redirect(url_for('adm.ver_hospedes_quarto', id_quarto=hospede.id_quarto.id_quarto))
+
+    return render_template('adm/editarhospede.html', hospede=hospede)
+
+
 @rota_adm.route('/colaborador/<cargo>/<int:id>/excluir', methods=['POST'])
 def excluir_colaborador(cargo, id):
     #pode excluir todos os usuarios
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
+    
     if cargo == "adm":
         model = Adm
         id_campo = Adm.id_adm
@@ -216,22 +236,88 @@ def excluir_colaborador(cargo, id):
     return redirect(url_for('adm.ver_colaboradores'))
 
 
+@rota_adm.route('/colaborador/<cargo>/<int:id>/excluir', methods=['POST'])
+def excluir_hospedes():
+    check = validar_adm()
+    if check:
+        return check
+    
+    hospede = Hospedes.get_or_none(Hospedes.id_hospede == id)
+    if not hospede:
+        return 'Hóspede não encontrado', 404
+    
+
+
 @rota_adm.route('/quartos', methods=['GET'])
 def ver_quartos():
     #mostra todos o quartos cadastrados
-
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
+    
     quartos = list(Quartos.select().dicts())
     return render_template('adm/verquarto.html', quartos=quartos)
+
 
 @rota_adm.route('/quartos/<int:id_quarto>/hospedes', methods=['GET'])
 def ver_hospedes_quarto(id_quarto):
     #mostra o hospede, que esta no quarto que foi selecionado
-    validar_ususario()
+    check = validar_adm()
+    if check:
+        return check
 
     quarto = Quartos.get_or_none(Quartos.id_quarto == id_quarto)
     if not quarto:
         return "Quarto não encontrado", 404
-
+    print(session)
     hospedes = list(quarto.hospedes)
-    return render_template('adm/hospede_quarto.html', quarto=quarto, hospedes=hospedes)
+
+    return render_template('adm/hospede_quarto.html', quarto=quarto,hospedes=hospedes )
+
+
+@rota_adm.route('/colaboradores', methods=['GET'])
+def ver_colaboradores():
+    #cria uma lista com todos os usuarios do sistema, permitindo edita-los. ou excluí-los 
+    check = validar_adm()
+    if check:
+        return check
+    administradores = list(Adm.select().dicts())
+    cuidadores = list(Cuidadores.select().dicts())
+    gestores = list(Gestor.select().dicts())
+
+    colaboradores = []
+
+    for adm in administradores:
+        colaboradores.append({
+            'id': adm['id_adm'],
+            'nome': adm['nome'],
+            'cargo': 'adm',
+            'email': adm.get('email', ''),
+            'telefone': '',
+            'turno': '',
+            'data_contratacao': adm.get('criado_em')
+        })
+
+    for c in cuidadores:
+        colaboradores.append({
+            'id': c['id_cuidador'],
+            'nome': c['nome'],
+            'cargo': 'cuidador',
+            'email': '',
+            'telefone': c['telefone'],
+            'turno': c['turno'],
+            'data_contratacao': c['data_contratacao']
+        })
+
+    for g in gestores:
+        colaboradores.append({
+            'id': g['id_gestor'],
+            'nome': g['nome'],
+            'cargo': 'gestor',
+            'email': g['email'],
+            'telefone': '',
+            'turno': '',
+            'data_contratacao': g.get('criado_em')
+        })
+    return render_template('adm/vercolaborador.html',colaboradores=colaboradores)
+

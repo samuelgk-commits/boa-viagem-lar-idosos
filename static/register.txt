@@ -1,3 +1,5 @@
+#esse docuemnto de texto foi usado para anotar coisas que eu achei intereçante anotar para mim mesmo parar organização, lembrar e etc
+
 #@app é a variavel para inicalizar no flask
 
 #.route = rota (/blog, /cadastro) / seria a rota principal que abriria o site

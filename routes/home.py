@@ -39,19 +39,23 @@ def login():
                 return render_template('login.html', error = error)
             
             session['cargo'] = cargo
+            session['nome'] = nome_usuario.nome
 
             match cargo:
                 case 'adm':
                     session['usuario_id'] = nome_usuario.id_adm
                     return redirect(url_for('adm.painel'))
-                
                 case 'gestor':
                     session['usuario_id'] = nome_usuario.id_gestor
                     return redirect(url_for('gestor.painel'))
-                
                 case 'cuidador':
                     session['usuario_id'] = nome_usuario.id_cuidador
                     return redirect(url_for('cuidador.painel'))
 
-
+            
         return render_template('login.html')
+
+@rota_home.route('/logout')
+def logout():
+    session.clear() 
+    return redirect(url_for('home.login'))

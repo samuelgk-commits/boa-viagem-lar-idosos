@@ -35,18 +35,19 @@ body {
     margin-bottom: 30px;
 }
 
-/* GRID DOS QUARTOS */
+
 .quartos-container {
-    display: grid;
+    display:inline;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
 }
 
-/* CARD */
+
 .quarto-card {
-    background-color: white;
+    background-color: rgb(246, 246, 246);
     border-radius: 12px;
     padding: 25px;
+    margin-top: 10px;
     text-align: center;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     transition: 0.2s ease;

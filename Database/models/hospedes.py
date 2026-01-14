@@ -17,6 +17,7 @@ class Hospedes(BaseModel):
    
     criado_em = DateTimeField(default=datetime.datetime.now)
     atualizado_em = DateTimeField(default=datetime.datetime.now)
+    atualizado_por = CharField(null=True)  
     id_quarto = ForeignKeyField(Quartos, backref="hospedes", column_name="id_quarto", null=True)
     class Meta:
         database = db
