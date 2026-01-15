@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/editarhospede.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editarhospede.css') }}">
     <title>Document</title>
 </head>
+
 <body>
 
-    
+
     <form method="POST">
         <h1>Editar Hóspedes</h1>
         <label for="nome">Nome</label>
@@ -18,8 +20,13 @@
         <input name="data_nascimento" value="{{ hospede.data_nascimento }}">
 
         <label for="sexo">Sexo</label>
-        <input name="sexo" value="{{ hospede.sexo }}">
-        
+        <select name="sexo" required>
+            <option value="Masculino" {% if hospede.sexo=='Masculino' %}selected{% endif %}>Masculino</option>
+            <option value="Feminino" {% if hospede.sexo=='Feminino' %}selected{% endif %}>Feminino</option>
+            <option value="Outro" {% if hospede.sexo=='Outro' %}selected{% endif %}>Outro</option>
+        </select>
+
+
         <label for="nomeresp">Nome do Responsável</label>
         <input name="responsavel_nome" value="{{ hospede.responsavel_nome }}">
 
@@ -36,7 +43,12 @@
         <textarea name="observacoes">{{ hospede.observacoes }}</textarea>
 
         <button type="submit">Salvar</button>
+        <button type="button" class="button_cancel" onclick="window.history.back()">Cancelar </button>
+
+
+
     </form>
-    
+
 </body>
+
 </html>

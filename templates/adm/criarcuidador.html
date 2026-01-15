@@ -12,63 +12,71 @@
 </head>
 
 <body>
+
     <main class="container">
-    <form action="{{ url_for('adm.novo_cuidador') }}" method="post">
-        <div class="letreiro"><h1>Cadastrar Cuidador</h1></div>
+        <form action="{{ url_for('adm.novo_cuidador') }}" method="post">
+            <div class="letreiro">
+                <h1>Cadastrar Cuidador</h1>
+            </div>
 
-        <div class="parent">
-            <div class="div1">
-                <div class="input-box">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" placeholder="Nome do Cuidador" maxlength="150" required>
-                    <i class="bx bxs-user"></i>
+            <div class="parent">
+                <div class="div1">
+                    <div class="input-box">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome do Cuidador" maxlength="150"
+                            required>
+                        <i class="bx bxs-user"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" maxlength="20"
+                            required>
+                        <i class="bx bxs-phone"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="email@exemplo.com" maxlength="150"
+                            required>
+                        <i class="bx bxs-envelope"></i>
+                    </div>
                 </div>
 
-                <div class="input-box">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" maxlength="20" required>
-                    <i class="bx bxs-phone"></i>
-                </div>
+                <div class="div2">
+                    <div class="input-box">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" minlength="8"
+                            maxlength="255" required>
+                        <i class="bx bxs-lock-alt"></i>
+                    </div>
 
-                <div class="input-box">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="email@exemplo.com" maxlength="150" required>
-                    <i class="bx bxs-envelope"></i>
+                    <div class="input-box">
+                        <label for="turno">Turno de Trabalho</label>
+                        <select id="turno" name="turno" required>
+                            <option value="" disabled selected>Selecione o Turno</option>
+                            <option value="manha">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                            <option value="noite">Noite</option>
+                            <option value="integral">Integral</option>
+                        </select>
+                        <i class="bx bxs-time"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="data_contratacao">Data de Contratação</label>
+                        <input type="date" id="data_contratacao" name="data_contratacao" required>
+                        <i class="bx bxs-calendar-event"></i>
+                    </div>
                 </div>
             </div>
 
-            <div class="div2">
-                <div class="input-box">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" minlength="8" maxlength="255" required>
-                    <i class="bx bxs-lock-alt"></i>
-                </div>
-
-                <div class="input-box">
-                    <label for="turno">Turno de Trabalho</label>
-                    <select id="turno" name="turno" required>
-                        <option value="" disabled selected>Selecione o Turno</option>
-                        <option value="manha">Manhã</option>
-                        <option value="tarde">Tarde</option>
-                        <option value="noite">Noite</option>
-                        <option value="integral">Integral</option>
-                    </select>
-                    <i class="bx bxs-time"></i>
-                </div>
-
-                <div class="input-box">
-                    <label for="data_contratacao">Data de Contratação</label>
-                    <input type="date" id="data_contratacao" name="data_contratacao" required>
-                    <i class="bx bxs-calendar-event"></i>
-                </div>
+            <div class="button-container">
+                <button type="submit" class="login">Enviar</button>
+                <button type="button" class="login" onclick="window.history.back()">Cancelar</button>
             </div>
-        </div>
-
-        <div class="button-container">
-            <button type="submit" class="login">Enviar</button>
-        </div>
-    </form>
-</main>
+        </form>
+    </main>
 
 </body>
 

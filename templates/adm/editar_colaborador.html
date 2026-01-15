@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/editarcolab.css') }}">
 </head>
+
 <body>
     <h1>Editar Colaborador: {{ colaborador.nome }} ({{ cargo }})</h1>
 
@@ -33,11 +35,13 @@
         </select><br><br>
 
         <label for="data_contratacao">Data de Contratação:</label>
-        <input type="date" id="data_contratacao" name="data_contratacao" value="{{ colaborador.data_contratacao }}"><br><br>
+        <input type="date" id="data_contratacao" name="data_contratacao"
+            value="{{ colaborador.data_contratacao }}"><br><br>
         {% endif %}
 
         <button type="submit">Salvar Alterações</button>
         <a href="{{ url_for('adm.ver_colaboradores') }}"><button type="button">Cancelar</button></a>
     </form>
 </body>
+
 </html>

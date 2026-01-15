@@ -11,7 +11,13 @@
 </head>
 
 <body>
-
+    <div class="top-bar">
+        <div class="nav-group">
+            <a href="{{ url_for('adm.painel') }}" class="nav-btn">
+                <img src="{{ url_for('static', filename='img/menu.png') }}" class="nav-icon">
+            </a>
+        </div>
+    </div>
     <h1>Colaboradores</h1>
 
     <div class="grid-container">
@@ -24,15 +30,20 @@
             {% if colab.turno %}<p><strong>Turno:</strong> {{ colab.turno }}</p>{% endif %}
 
             <div class="buttons">
-            
-                <form action="{{ url_for('adm.editar_colaborador', cargo=colab.cargo, id=colab.id) }}" method="get" style="display:inline-block;">
+
+                <form action="{{ url_for('adm.editar_colaborador', cargo=colab.cargo, id=colab.id) }}" method="get"
+                    style="display:inline-block;">
                     <button type="submit" class="edit-btn">Editar</button>
                 </form>
 
-            
-                <form action="{{ url_for('adm.excluir_colaborador', cargo=colab.cargo, id=colab.id) }}" method="post" style="display:inline-block;">
+
+                <form action="{{ url_for('adm.excluir_colaborador', cargo=colab.cargo, id=colab.id) }}" method="post"
+                    style="display:inline-block;"
+                    onsubmit="return confirm('Tem certeza que deseja excluir o colaborador {{ colab.nome }}?');">
+
                     <button type="submit" class="delete-btn">Excluir</button>
                 </form>
+
             </div>
         </div>
         {% endfor %}

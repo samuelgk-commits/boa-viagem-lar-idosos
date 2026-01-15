@@ -236,8 +236,8 @@ def excluir_colaborador(cargo, id):
     return redirect(url_for('adm.ver_colaboradores'))
 
 
-@rota_adm.route('/colaborador/<cargo>/<int:id>/excluir', methods=['POST'])
-def excluir_hospedes():
+@rota_adm.route('/hospede/<int:id>/excluir', methods=['POST'])
+def excluir_hospede(id):
     check = validar_adm()
     if check:
         return check
@@ -245,7 +245,12 @@ def excluir_hospedes():
     hospede = Hospedes.get_or_none(Hospedes.id_hospede == id)
     if not hospede:
         return 'Hóspede não encontrado', 404
-    
+
+    id_quarto = hospede.id_quarto.id_quarto
+    hospede.delete_instance()
+
+    return redirect(url_for('adm.ver_hospedes_quarto', id_quarto=id_quarto))
+
 
 
 @rota_adm.route('/quartos', methods=['GET'])

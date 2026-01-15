@@ -4,31 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/telascores.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/painel.css') }}">
 
     <title>Tela inicial - Nível ADM - </title>
 </head>
 
 <body>
-    
+
+    <div class="top-bar">
+        <div class="nav-group">
+            <a href="{{ url_for('home.logout') }}" class="nav-btn">
+                <img src="{{ url_for('static', filename='img/logout.png') }}" class="nav-icon">
+            </a>
+        </div>
+    </div>
+    sair
+
 
     <main class="container">
 
         <div class="letreiro">Lar Boa Viagem</div>
 
-                <a href="{{ url_for('home.logout') }}" class="menu-button">
-                                    <img class="img-icon" src="../static/img/logout.png" width="100" height="100" />
-                                    <span class="button-label">Quartos</span>
-                                </a>
-                <div class="buttons-container">
-                    <div class="row-1">
+        <div class="buttons-container">
+            <div class="row-1">
 
 
                 <a href="{{ url_for('adm.ver_quartos') }}" class="menu-button">
                     <img class="img-icon" src="../static/img/quartodoscara.png" width="100" height="100" />
                     <span class="button-label">Quartos</span>
                 </a>
-           
+
                 <a href="{{ url_for('adm.novo_quarto') }}" class="menu-button">
                     <img class="img-icon" src="../static/img/cadastrar_quartos.png" width="100" height="100" />
                     <span class="button-label">Cadastrar Quartos</span>
@@ -49,7 +54,7 @@
                     <span class="button-label">Ver Colaboradores</span>
                 </a>
 
-                    <a href="{{ url_for('adm.novo_cuidador') }}" class="menu-button">
+                <a href="{{ url_for('adm.novo_cuidador') }}" class="menu-button">
                     <img class="img-icon" src="../static/img/cadastrar_colaboradores.png" width="100" height="100" />
                     <span class="button-label">Cadastrar Cuidadores</span>
                 </a>

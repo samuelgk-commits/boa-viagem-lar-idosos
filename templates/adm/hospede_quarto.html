@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <div class="top-bar">
+        <div class="nav-group">
+            <a href="{{ url_for('adm.painel') }}" class="nav-btn">
+                <img src="{{ url_for('static', filename='img/menu.png') }}" class="nav-icon">
+            </a>
+        </div>
+    </div>
 
     <div class="container-custom">
         <h1 class="titulo">
@@ -59,11 +66,13 @@
                         </td>
 
 
-                        <th>
-                            <form action="" method="get" style="display:inline-block;">
+                        <td>
+                            <form action="{{ url_for('adm.excluir_hospede', id=h.id_hospede) }}" method="post"
+                                onsubmit="return confirm('Tem certeza que deseja excluir este hóspede?');">
                                 <button type="submit" class="button_delete">Excluir</button>
                             </form>
-                        </th>
+                        </td>
+
                     </tr>
                     {% endfor %}
                 </tbody>

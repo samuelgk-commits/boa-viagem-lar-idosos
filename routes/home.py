@@ -57,5 +57,8 @@ def login():
 
 @rota_home.route('/logout')
 def logout():
+    #sai da conta logada
     session.clear() 
     return redirect(url_for('home.login'))
+
+

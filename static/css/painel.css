@@ -1,0 +1,134 @@
+
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../img/fundologin.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex-direction: column; 
+}
+
+.letreiro {
+    position: absolute;
+    top: 100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-size: 4em; 
+    font-weight: bold;
+    color: #7db7ff; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+
+.buttons-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 80px;
+    margin-top: 20vh; 
+}
+
+
+.row-1,
+.row-2 {
+    display: flex;
+    justify-content: center;
+    gap: 60px; 
+    width: 100%; 
+    max-width: 1200px; 
+}
+
+
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-decoration: none; 
+    color: #333; 
+    font-weight: 600;
+    width: 180px; 
+    text-align: center;
+}
+
+.button-label {
+    margin-top: 15px; 
+    font-size: 1.2em; 
+    color: #333; 
+}
+
+
+.img-icon {
+    width: 120px; 
+    height: 120px; 
+}
+
+
+.voltar-button {
+    
+    position: absolute;
+    top: 20px;   
+    left: 20px; 
+    z-index: 100;
+    text-decoration: none; 
+}
+
+
+.voltar-button .img-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #7db7ff;
+    display: flex;
+    justify-content: flex-start;  
+    align-items: center;
+    padding: 0 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+}
+
+ 
+.nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    background: #a30f20;
+}
+
+/* Ícone */
+.nav-icon {
+    width: 80px;
+    height: 80px;
+}
