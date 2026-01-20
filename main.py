@@ -14,3 +14,4 @@ configure_all(app)
 if __name__ == "__main__":
     threading.Timer(1.5, abrir_nav).start()
     app.run()
+
