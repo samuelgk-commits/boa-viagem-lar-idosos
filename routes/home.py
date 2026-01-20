@@ -14,6 +14,7 @@ def login():
             nome = request.form.get('nome')
             senha = request.form.get('senha')
             cargo = request.form.get('cargo')
+           
 
             nome_usuario = None
             error = "senha ou nome inválidos"

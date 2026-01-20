@@ -1,46 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/telascores.css">
-    <title>Tela inicial - Nível ADM - </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/painel.css') }}">
+    <title>Painel do Gestor | Lar Boa Viagem</title>
 </head>
+
 <body>
 
-
+    <div class="top-bar">
+        <div class="nav-group">
+            <a href="{{ url_for('home.logout') }}" class="nav-btn">
+                <img src="{{ url_for('static', filename='img/logout.png') }}"
+                     class="nav-icon"
+                     alt="Sair">
+            </a>
+        </div>
+    </div>
 
     <main class="container">
 
-    <div class="letreiro">Lar Boa Viagem</div>
+        <div class="letreiro">Lar Boa Viagem</div>
 
-    <div class="buttons-container">
-        <div class="row-1">
+        <div class="buttons-container">
+            <div class="row-1">
 
-        
-            <a href="verquarto.html" class="menu-button">
-                <img class="img-icon" src="../static/img/quartodoscara.png" width="100" height="100" />
-                <span class="button-label">Quartos</span>
-            </a>
+                <a href="{{ url_for('gestor.ver_quartos') }}" class="menu-button">
+                    <img class="img-icon"
+                         src="{{ url_for('static', filename='img/quartodoscara.png') }}"
+                         alt="Quartos">
+                    <span class="button-label">Quartos</span>
+                </a>
 
-            <a href="criarquarto.html" class="menu-button">
-                <img class="img-icon" src="../static/img/cadastrar_quartos.png" width="100" height="100" />
-                <span class="button-label">Cadastrar Quartos</span>
-            </a>
+                <a href="{{ url_for('gestor.novo_quarto') }}" class="menu-button">
+                    <img class="img-icon"
+                         src="{{ url_for('static', filename='img/cadastrar_quartos.png') }}"
+                         alt="Cadastrar quartos">
+                    <span class="button-label">Cadastrar Quartos</span>
+                </a>
 
-            <a href="criarhospede.html" class="menu-button">
-                <img class="img-icon" src="../static/img/cadastrar_hospedes.png" width="100" height="100" />
-                <span class="button-label">Cadastrar Hóspedes</span>
-            </a>
+                <a href="{{ url_for('gestor.formulario_hospede') }}" class="menu-button">
+                    <img class="img-icon"
+                         src="{{ url_for('static', filename='img/cadastrar_hospedes.png') }}"
+                         alt="Cadastrar hóspedes">
+                    <span class="button-label">Cadastrar Hóspedes</span>
+                </a>
 
+            </div>
+
+            <div class="row-2"></div>
         </div>
 
-        <div class="row-2">
-            
+    </main>
 
-           
-        </div>
-</main>
-    
 </body>
 </html>

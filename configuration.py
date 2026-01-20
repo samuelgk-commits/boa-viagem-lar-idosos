@@ -11,29 +11,7 @@ from Database.models.atendimentos import Atendimentos
 from Database.models.cuidadores import Cuidadores
 from Database.models.cuidados import Cuidados
 from Database.models.quartos import Quartos
-import secrets, string
-
-def criar_adm_padrao():
-    #cria um adm padrão 
-    existe = Adm.select().exists()
-    
-    if not existe:
-        Adm.create(
-            nome="adm",
-            senha="123",
-            email="admin@boaviagem.com"
-        )
-        Adm.create(
-            nome="Samuel Amaral",
-            senha="1234",
-            email="samuel@boaviagem.com"
-        )
-
-def password_session(length = 24):
-    #cria uma senha aleatoria para proteger os dados numa sessão, podem ser vistos porem não editados
-    all_caracters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(secrets.choice(all_caracters) for i in range(length))
-    return password
+from utils_db import criar_adm_padrao
     
 def configure_all(app):
     #junta todas as configurações feitas aqui para mandar pro main
@@ -47,8 +25,6 @@ def configure_routes(app):
     app.register_blueprint(rota_adm, url_prefix="/adm")
     app.register_blueprint(rota_gestor, url_prefix="/gestor") 
     app.register_blueprint(rota_cuidador, url_prefix="/cuidador") 
-
-
 
 def configure_db():
     #função para testar/abrir o banco 

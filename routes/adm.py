@@ -5,18 +5,9 @@ from Database.models.cuidadores import Cuidadores
 from Database.models.gestor import Gestor
 from Database.models.adm import Adm
 import datetime
+from utils import validar_adm
 
 rota_adm = Blueprint('adm', __name__)
-
-def validar_adm():
-    #validação para que cada um só acesse oque seu privilegio permite
-    if 'cargo' not in session:
-        return redirect(url_for('home.login'))
-
-    if session.get("cargo") != "adm":
-        return redirect(url_for('home.login'))
-
-    return None
 
 @rota_adm.route('/painel', methods=['GET'])
 def painel():
@@ -200,7 +191,8 @@ def editar_hospede(id):
         hospede.atualizado_em = datetime.datetime.now()
         nome = session.get("nome")
         cargo = session.get("cargo")
-        hospede.atualizado_por = f"{cargo}: {nome}"
+        id = session.get('usuario_id')
+        hospede.atualizado_por = f"#ID: {id} | cargo: {cargo} | nome:  {nome}"
         hospede.save()
 
         return redirect(url_for('adm.ver_hospedes_quarto', id_quarto=hospede.id_quarto.id_quarto))

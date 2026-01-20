@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editarhospede.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form method="POST">
+        <h1>Editar Hóspedes</h1>
+        <label for="nome">Nome</label>
+        <input name="nome" value="{{ hospede.nome }}">
+
+        <label for="datanasc">Data de Nascimento</label>
+        <input name="data_nascimento" value="{{ hospede.data_nascimento }}">
+
+        <label for="sexo">Sexo</label>
+        <select name="sexo" required>
+            <option value="Masculino" {% if hospede.sexo=='Masculino' %}selected{% endif %}>Masculino</option>
+            <option value="Feminino" {% if hospede.sexo=='Feminino' %}selected{% endif %}>Feminino</option>
+            <option value="Outro" {% if hospede.sexo=='Outro' %}selected{% endif %}>Outro</option>
+        </select>
+
+
+        <label for="nomeresp">Nome do Responsável</label>
+        <input name="responsavel_nome" value="{{ hospede.responsavel_nome }}">
+
+        <label for="telresp">Telefone do Responsável</label>
+        <input name="responsavel_telefone" value="{{ hospede.responsavel_telefone }}">
+
+        <label for="condmedi">Condições Medicas</label>
+        <textarea name="condicoes_medicas">{{ hospede.condicoes_medicas }}</textarea>
+
+        <label for="alergias">Alergias</label>
+        <textarea name="alergias">{{ hospede.alergias }}</textarea>
+
+        <label for="obs">Observações</label>
+        <textarea name="observacoes">{{ hospede.observacoes }}</textarea>
+
+        <button type="submit">Salvar</button>
+        <button type="button" class="button_cancel" onclick="window.history.back()">Cancelar </button>
+
+
+
+    </form>
+
+</body>
+
+</html>

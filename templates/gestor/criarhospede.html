@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/criarhospede.css') }}">
+
+    <title>Cadastrar Hóspedes</title>
+</head>
+
+
+<body>
+
+
+    <main class="container">
+
+        <form action="{{ url_for('gestor.novo_hospede') }}" method="post">
+
+
+            <div class="letreiro">
+                <h1>Cadastrar</h1>
+            </div>
+
+
+            <div class="form-content-grid">
+
+
+                <div class="column-wrapper">
+                    <h2 class="section-title">Informações do <br> Hóspede</h2>
+
+
+                    <div class="input-box">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome do Hóspede" maxlength="150" required>
+                        <i class="bx bxs-user"></i>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="data_nascimento">Data de Nascimento</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" required>
+                        <i class="bx bxs-calendar"></i>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="" disabled selected>Selecione o Sexo</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select>
+                        <i class="bx bxs-group"></i>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="data_entrada">Data de Entrada</label>
+                        <input type="date" id="data_entrada" name="data_entrada" required>
+                        <i class="bx bxs-log-in-circle"></i>
+                    </div>
+                </div>
+
+
+                <div class="column-wrapper">
+                    <h2 class="section-title">Informações do Responsável</h2>
+
+                    <div class="input-box">
+                        <label for="id_quarto">Quarto</label>
+                        <select id="id_quarto" name="id_quarto" required>
+                            <option value="" disabled selected>Selecione o Quarto</option>
+                            {% for quarto in quartos %}
+                            <option value="{{ quarto.id_quarto }}">Quarto {{ quarto.num_quarto }} - Andar {{
+                                quarto.andar }}</option>
+                            {% endfor %}
+                        </select>
+                        <i class="bx bxs-home"></i>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="responsavel_nome">Nome do Responsável</label>
+                        <input type="text" id="responsavel_nome" name="responsavel_nome"
+                            placeholder="Nome do Responsável" maxlength="150">
+                        <i class="bx bxs-id-card"></i>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="responsavel_telefone">Telefone do Responsável</label>
+                        <input type="tel" id="responsavel_telefone" name="responsavel_telefone"
+                            placeholder="(XX) XXXXX-XXXX" maxlength="20">
+                        <i class="bx bxs-phone"></i>
+                    </div>
+                </div>
+
+
+                <div class="column-wrapper">
+                    <h2 class="section-title">Detalhes de Saúde e Observações</h2>
+
+                    <div class="input-box textarea-box">
+                        <label for="condicoes_medicas">Condições Médicas Importantes</label>
+                        <textarea id="condicoes_medicas" name="condicoes_medicas" rows="3"
+                            placeholder="Diabetes, pressão alta, etc."></textarea>
+                    </div>
+
+
+                    <div class="input-box textarea-box">
+                        <label for="alergias">Alergias</label>
+                        <textarea id="alergias" name="alergias" rows="3"
+                            placeholder="Alergia a medicamentos, alimentos, poeira."></textarea>
+                    </div>
+
+
+                    <div class="input-box textarea-box">
+                        <label for="observacoes">Observações Adicionais </label>
+                        <textarea id="observacoes" name="observacoes" rows="4"
+                            placeholder="Qualquer outra observação relevante."></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="button-container">
+                <button type="submit" class="login">Enviar</button>
+                <button type="button" class="login" onclick="window.history.back()">Cancelar</button>
+            </div>
+
+        </form>
+    </main>
+</body>
+
+</html>

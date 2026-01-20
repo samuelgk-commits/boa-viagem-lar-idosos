@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/criarquarto.css') }}">
+
+
+
+
+    <title>Cadastrar Quartos</title>
+</head>
+
+<body>
+
+
+    <main class="container">
+
+        <form action="{{ url_for('gestor.novo_quarto') }}" method="post">
+
+            <div class="letreiro">
+                <h1>Cadastrar/alterar Quartos</h1>
+            </div>
+
+
+            <div class="input-box">
+                <label for="numquarto">Número do Quarto</label>
+                <input type="number" id="numquarto" name="numquarto" placeholder="Ex: 101" required>
+                <i class="bx bxs-door-open"></i>
+            </div>
+
+
+            <div class="input-box">
+                <label for="andar">Andar do Quarto</label>
+                <input type="number" id="andar" name="andar" placeholder="Ex: 1" required>
+                <i class="bx bxs-building-house"></i>
+            </div>
+
+
+            <div class="button-container">
+                <button type="submit" class="login">Enviar</button>
+                <button type="button" class="login" onclick="window.history.back()">Cancelar</button>
+            </div>
+
+        </form>
+    </main>
+</body>
+
+</html>
