@@ -1,9 +1,15 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+from flask import Blueprint, render_template, request, redirect, url_for, session
 from Database.models.gestor import Gestor
 from Database.models.adm import Adm
 from Database.models.cuidadores import Cuidadores
+import os
 
 rota_home = Blueprint('home', __name__)
+
+@rota_home.route('/shutdown', methods=['POST'])
+def fechar_aplicacao():
+    #função de extrema importância, pois ele impede que a aplicação fique rodando em segundo plano
+    os._exit(0)
 
 @rota_home.route('/', methods=['GET', 'POST'])
 def login():

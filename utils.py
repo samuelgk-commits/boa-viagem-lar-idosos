@@ -1,5 +1,9 @@
-import secrets, string
+import secrets, string, webbrowser
 from flask import session, redirect, url_for
+
+def abrir_nav():
+    #abre a aplicação no navegador ao clicar no icone
+    webbrowser.open_new("http://127.0.0.1:5000")
 
 def password_session(length = 24):
     #cria uma senha aleatoria para proteger os dados numa sessão, podem ser vistos porem não editados
@@ -36,3 +40,4 @@ def validar_cuidador():
         return redirect(url_for('home.login'))
 
     return None
+

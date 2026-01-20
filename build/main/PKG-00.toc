@@ -1,0 +1,480 @@
+('C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+ 'Idosos\\build\\main\\main.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\build\\main\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\build\\main\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\build\\main\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\build\\main\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\build\\main\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\build\\main\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_setuptools',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_setuptools.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('main',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de Idosos\\main.py',
+   'PYSOURCE'),
+  ('python313.dll',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\python313.dll',
+   'BINARY'),
+  ('select.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('unicodedata.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_decimal.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_socket.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_lzma.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_bz2.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('_multiprocessing.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_multiprocessing.pyd',
+   'EXTENSION'),
+  ('pyexpat.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('_ctypes.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('_queue.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_queue.pyd',
+   'EXTENSION'),
+  ('_overlapped.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_overlapped.pyd',
+   'EXTENSION'),
+  ('_asyncio.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_asyncio.pyd',
+   'EXTENSION'),
+  ('_wmi.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_wmi.pyd',
+   'EXTENSION'),
+  ('_sqlite3.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_sqlite3.pyd',
+   'EXTENSION'),
+  ('_uuid.pyd',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_uuid.pyd',
+   'EXTENSION'),
+  ('markupsafe\\_speedups.cp313-win_amd64.pyd',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\markupsafe\\_speedups.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('libcrypto-3.dll',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\libcrypto-3.dll',
+   'BINARY'),
+  ('libssl-3.dll',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\libssl-3.dll',
+   'BINARY'),
+  ('libffi-8.dll',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\libffi-8.dll',
+   'BINARY'),
+  ('VCRUNTIME140_1.dll',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('sqlite3.dll',
+   'C:\\Users\\Samsung\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\sqlite3.dll',
+   'BINARY'),
+  ('static\\css\\criarcolaborador.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\criarcolaborador.css',
+   'DATA'),
+  ('static\\css\\criarhospede.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\criarhospede.css',
+   'DATA'),
+  ('static\\css\\criarquarto.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\criarquarto.css',
+   'DATA'),
+  ('static\\css\\editarcolab.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\editarcolab.css',
+   'DATA'),
+  ('static\\css\\editarhospede.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\editarhospede.css',
+   'DATA'),
+  ('static\\css\\hospede_quarto.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\hospede_quarto.css',
+   'DATA'),
+  ('static\\css\\login.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\login.css',
+   'DATA'),
+  ('static\\css\\painel.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\painel.css',
+   'DATA'),
+  ('static\\css\\vercolaborador.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\vercolaborador.css',
+   'DATA'),
+  ('static\\css\\verhospede.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\verhospede.css',
+   'DATA'),
+  ('static\\css\\verquarto.css',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\css\\verquarto.css',
+   'DATA'),
+  ('static\\img\\BACK-removebg-preview.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\BACK-removebg-preview.png',
+   'DATA'),
+  ('static\\img\\agenda.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\agenda.png',
+   'DATA'),
+  ('static\\img\\cadastrar_colaboradores.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\cadastrar_colaboradores.png',
+   'DATA'),
+  ('static\\img\\cadastrar_hospedes.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\cadastrar_hospedes.png',
+   'DATA'),
+  ('static\\img\\cadastrar_quartos.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\cadastrar_quartos.png',
+   'DATA'),
+  ('static\\img\\criar_agenda.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\criar_agenda.png',
+   'DATA'),
+  ('static\\img\\fundologin.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\fundologin.png',
+   'DATA'),
+  ('static\\img\\logout.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\logout.png',
+   'DATA'),
+  ('static\\img\\menu.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\menu.png',
+   'DATA'),
+  ('static\\img\\quartodoscara.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\quartodoscara.png',
+   'DATA'),
+  ('static\\img\\ver_colaboradores.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\ver_colaboradores.png',
+   'DATA'),
+  ('static\\img\\ver_hospedes.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\ver_hospedes.png',
+   'DATA'),
+  ('static\\img\\voltaricon.png',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\img\\voltaricon.png',
+   'DATA'),
+  ('static\\js\\cru.js',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\js\\cru.js',
+   'DATA'),
+  ('static\\register.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\static\\register.txt',
+   'DATA'),
+  ('templates\\adm\\criarcuidador.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\criarcuidador.html',
+   'DATA'),
+  ('templates\\adm\\criargestor.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\criargestor.html',
+   'DATA'),
+  ('templates\\adm\\criarhospede.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\criarhospede.html',
+   'DATA'),
+  ('templates\\adm\\criarquarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\criarquarto.html',
+   'DATA'),
+  ('templates\\adm\\editar_colaborador.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\editar_colaborador.html',
+   'DATA'),
+  ('templates\\adm\\editarhospede.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\editarhospede.html',
+   'DATA'),
+  ('templates\\adm\\hospede_quarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\hospede_quarto.html',
+   'DATA'),
+  ('templates\\adm\\painel.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\painel.html',
+   'DATA'),
+  ('templates\\adm\\vercolaborador.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\vercolaborador.html',
+   'DATA'),
+  ('templates\\adm\\verhospede.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\verhospede.html',
+   'DATA'),
+  ('templates\\adm\\verquarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\adm\\verquarto.html',
+   'DATA'),
+  ('templates\\cuidador\\hospede_quarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\cuidador\\hospede_quarto.html',
+   'DATA'),
+  ('templates\\cuidador\\painel.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\cuidador\\painel.html',
+   'DATA'),
+  ('templates\\cuidador\\verquarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\cuidador\\verquarto.html',
+   'DATA'),
+  ('templates\\gestor\\criarhospede.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\gestor\\criarhospede.html',
+   'DATA'),
+  ('templates\\gestor\\criarquarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\gestor\\criarquarto.html',
+   'DATA'),
+  ('templates\\gestor\\editarhospede.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\gestor\\editarhospede.html',
+   'DATA'),
+  ('templates\\gestor\\hospede_quarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\gestor\\hospede_quarto.html',
+   'DATA'),
+  ('templates\\gestor\\painel.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\gestor\\painel.html',
+   'DATA'),
+  ('templates\\gestor\\verquarto.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\gestor\\verquarto.html',
+   'DATA'),
+  ('templates\\login.html',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\templates\\login.html',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\WHEEL',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\WHEEL',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\RECORD',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\RECORD',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\INSTALLER',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\METADATA',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\METADATA',
+   'DATA'),
+  ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
+   'ipsum.txt',
+   'DATA'),
+  ('werkzeug-3.1.5.dist-info\\WHEEL',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\werkzeug-3.1.5.dist-info\\WHEEL',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\METADATA',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\METADATA',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\INSTALLER',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('flask-3.1.2.dist-info\\METADATA',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\flask-3.1.2.dist-info\\METADATA',
+   'DATA'),
+  ('click-8.3.1.dist-info\\licenses\\LICENSE.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\click-8.3.1.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('flask-3.1.2.dist-info\\REQUESTED',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\flask-3.1.2.dist-info\\REQUESTED',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\licenses\\LICENSE.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\RECORD',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\RECORD',
+   'DATA'),
+  ('werkzeug-3.1.5.dist-info\\INSTALLER',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\werkzeug-3.1.5.dist-info\\INSTALLER',
+   'DATA'),
+  ('click-8.3.1.dist-info\\RECORD',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\click-8.3.1.dist-info\\RECORD',
+   'DATA'),
+  ('click-8.3.1.dist-info\\WHEEL',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\click-8.3.1.dist-info\\WHEEL',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\WHEEL',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\WHEEL',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\WHEEL',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\WHEEL',
+   'DATA'),
+  ('werkzeug-3.1.5.dist-info\\RECORD',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\werkzeug-3.1.5.dist-info\\RECORD',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\top_level.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\top_level.txt',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\METADATA',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\METADATA',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\RECORD',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\RECORD',
+   'DATA'),
+  ('flask-3.1.2.dist-info\\licenses\\LICENSE.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\flask-3.1.2.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('click-8.3.1.dist-info\\INSTALLER',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\click-8.3.1.dist-info\\INSTALLER',
+   'DATA'),
+  ('flask-3.1.2.dist-info\\entry_points.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\flask-3.1.2.dist-info\\entry_points.txt',
+   'DATA'),
+  ('werkzeug-3.1.5.dist-info\\METADATA',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\werkzeug-3.1.5.dist-info\\METADATA',
+   'DATA'),
+  ('flask-3.1.2.dist-info\\RECORD',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\flask-3.1.2.dist-info\\RECORD',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\LICENSE.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('click-8.3.1.dist-info\\METADATA',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\click-8.3.1.dist-info\\METADATA',
+   'DATA'),
+  ('flask-3.1.2.dist-info\\INSTALLER',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\flask-3.1.2.dist-info\\INSTALLER',
+   'DATA'),
+  ('werkzeug-3.1.5.dist-info\\licenses\\LICENSE.txt',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\werkzeug-3.1.5.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('flask-3.1.2.dist-info\\WHEEL',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\flask-3.1.2.dist-info\\WHEEL',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\INSTALLER',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('base_library.zip',
+   'C:\\Users\\Samsung\\Downloads\\Projeto Boa Viagem - Lar de '
+   'Idosos\\build\\main\\base_library.zip',
+   'DATA')],
+ 'python313.dll',
+ False,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)

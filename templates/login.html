@@ -42,6 +42,14 @@
     <button type="submit" class="login">Login</button>
 
 </form>
+<form action="{{ url_for('home.fechar_aplicacao') }}" method="post"
+      onsubmit="return confirm('Deseja realmente sair do aplicativo?');">
+    <button type="submit" class="exit">
+        <i class="bx bx-exit"></i> Sair do App
+    </button>
+</form>
+
+
     <div class="input-box" id="error">
         {% if error %}
             <label for="darl"> {{ error }} </label>
