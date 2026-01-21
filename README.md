@@ -61,51 +61,51 @@ Principais objetivos:
 
 ### Tela de Login
 
-![Tela de Login| aqui temos como logar o usuario e escolher se ele é adm, egstor ou cuidador, cada um com suas permissões.](img/telas/login.png)
+![Tela de Login| aqui temos como logar o usuario e escolher se ele é adm, egstor ou cuidador, cada um com suas permissões.](static/img/telas/login.png)
 
 ### Tela Inicial ADM
 
-![Painel ADM | Aqui ficam todas as funções da aplicação.](img/telas/telaadm.png)
+![Painel ADM | Aqui ficam todas as funções da aplicação.](static/img/telas/telaadm.png)
 
 ### Criar Quarto
 
-![Tela de criar quartos | O cadastro de hospedes só vai funcionar corretamente caso tenho um quarto válido de selecionar quartos.](img/telas/cadaqua.png)
+![Tela de criar quartos | O cadastro de hospedes só vai funcionar corretamente caso tenho um quarto válido de selecionar quartos.](static/img/telas/cadaqua.png)
 
 ### Cadastro de Hóspede
 
-![Tela Cadastro de Hóspede](img/telas/cadahospe.png)
+![Tela Cadastro de Hóspede](static/img/telas/cadahospe.png)
 
 ### Cadastro de Gestor
 
-![Tela Cadastro de Gestores](img/telas/cadges.png)
+![Tela Cadastro de Gestores](static/img/telas/cadges.png)
 
 ### Cadastro de Cuidados
 
-![Tela Cadastro de Cuidados](img/telas/cadcui.png)
+![Tela Cadastro de Cuidados](static/img/telas/cadcui.png)
 
 ### Editar Hóspede
 
-![Tela Editar Hóspede](img/telas/editarhos.png)
+![Tela Editar Hóspede](static/img/telas/editarhos.png)
 
 ### Editar Colaborador
 
-![Tela Editar Colaborador](img/telas/editcolab.png)
+![Tela Editar Colaborador](static/img/telas/editcolab.png)
 
 ### Atualiazado por
 
-![Tela Ver Colaboradores | Aqui aparecem todos os colaboradores do sistema, somente o adm pode ver isso](img/telas/atualiazadopor.png)
+![Tela Ver Colaboradores | Aqui aparecem todos os colaboradores do sistema, somente o adm pode ver isso](static/img/telas/atualiazadopor.png)
 
 ### Escolher Quarto
 
-![Tela Escolher Quarto](img/telas/telaescolherquarto.png)
+![Tela Escolher Quarto](static/img/telas/telaescolherquarto.png)
 
 ### Hóspede no Quarto
 
-![Tela Hóspede no Quarto | Essa tela mostra os hóspedes que residem dentro do quarto selecionado](img/telas/hospedequa.png)
+![Tela Hóspede no Quarto | Essa tela mostra os hóspedes que residem dentro do quarto selecionado](static/img/telas/hospedequa.png)
 
 ### Visualizar Colaboradores
 
-![Tela Ver Colaboradores | Aqui aparecem todos os colaboradores do sistema, somente o adm pode ver isso](img/telas/vercolab.png)
+![Tela Ver Colaboradores | Aqui aparecem todos os colaboradores do sistema, somente o adm pode ver isso](static/img/telas/vercolab.png)
 
 ##  Instalação (Desenvolvimento)
 
