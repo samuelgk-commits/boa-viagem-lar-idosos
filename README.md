@@ -59,7 +59,7 @@ Principais objetivos:
 
 ##  Instalação (Desenvolvimento)
 
-- Um adendo importante é que sempre que for sair do app saia pelo botão de sair na pagina de login, caso contrário o main ficara rodando em segundo plano no seu dispositivo oque pode ser incoveniênte para voçê
+- Um adendo importante é que sempre que for finalizar o app saia pelo botão de sair na pagina de login, caso contrário o main ficará rodando em segundo plano no seu dispositivo oque pode ser incoveniênte para você
 
 
 ### 1. Clonar repositório
