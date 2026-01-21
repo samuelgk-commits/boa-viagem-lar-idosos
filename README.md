@@ -1,203 +1,278 @@
 # Lar Boa Viagem
 
-> Sistema web para gestão de uma Instituição de Longa Permanência para Idosos (ILPI), desenvolvido em Flask para cadastro e gerenciamento de hóspedes, controle de usuários e organização de quartos.
+> Sistema web para gestão de uma Instituição de Longa Permanência para Idosos (ILPI), desenvolvido em **Flask (Python)** para cadastro e gerenciamento de hóspedes, controle de usuários e organização de quartos.
 
+---
 
 ##  Visão Geral
 
-O **Lar Boa Viagem** é um projeto acadêmico e de portfólio que centraliza as operações administrativas de um lar de idosos, oferecendo uma interface simples e funcional para diferentes níveis de acesso (ADM, Gestor, Cuidador).
+O **Lar Boa Viagem** é um projeto **acadêmico** e de **portfólio** que centraliza as operações administrativas de um lar de idosos, oferecendo uma interface simples, funcional e organizada para diferentes níveis de acesso (**ADM, Gestor e Cuidador**).
 
-Principais objetivos:
-- Facilitar rotinas administrativas da ILPI
-- Centralizar informações de hóspedes, quartos e usuários
-- Oferecer controle de acesso baseado em cargos
-- Possibilitar empacotamento em executável (.exe) para distribuição
+### Objetivos principais
 
+* Facilitar as rotinas administrativas da ILPI
+* Centralizar informações de hóspedes, quartos e usuários
+* Oferecer controle de acesso baseado em cargos
+* Possibilitar o empacotamento do sistema em um executável (.exe)
+
+---
 
 ##  Tecnologias
 
-- Python 
-- Flask
-- Jinja2
-- MySQL
-- HTML5 / CSS3 / JavaScript
-- PyInstaller (para gerar .exe)
+* Python
+* Flask
+* Jinja2
+* MySQL / SQLite (opcional)
+* HTML5 / CSS3 / JavaScript
+* PyInstaller (geração do executável `.exe`)
 
+---
 
 ##  Perfis de Usuário
 
-- **Administrador (ADM)** — controle total do sistema e gerenciamento de usuários.
-- **Gestor** — gerencia hóspedes, quartos e setores.
-- **Cuidador** — acessa informações permitidas pelo seu papel (visualização).
+* **Administrador (ADM)**
 
+  * Controle total do sistema
+  * Gerenciamento de usuários e permissões
+
+* **Gestor**
+
+  * Gerenciamento de hóspedes
+  * Organização de quartos e setores
+
+* **Cuidador**
+
+  * Visualização das informações permitidas pelo sistema
+
+---
 
 ##  Funcionalidades Principais
 
-- Autenticação por cargo e controle de sessão
-- CRUD de hóspedes
-- Organização e cadastro de quartos/setores
-- Templates com Jinja2
-- Versão empacotada em executável (PyInstaller)
+* Autenticação por cargo
+* Controle de sessão de usuários
+* CRUD de hóspedes
+* Cadastro e organização de quartos e setores
+* Templates dinâmicos com Jinja2
+* Versão empacotada em executável para Windows (.exe)
 
+---
 
-## Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```bash
 ├── Database/        # Modelos e conexão com o banco de dados
-├── routes/          # Rotas organizadas por módulo (adm, gestor, cuidador...)
-├── static/          # CSS, imagens, JS
-├── templates/       # Templates Jinja2
+├── routes/          # Rotas organizadas por módulo (adm, gestor, cuidador)
+├── static/          # CSS, imagens e arquivos JS
+├── templates/       # Templates HTML (Jinja2)
 ├── main.py          # Entrada da aplicação
 ├── configuration.py # Configurações (DB, secret key, etc.)
-├── utils.py         # Funções utilitárias (ex.: validar_adm)
-├── utils_db.py      # Funções/utilitários de DB
+├── utils.py         # Funções utilitárias (ex.: validações)
+├── utils_db.py      # Funções auxiliares de banco de dados
 ├── icon.ico
 ├── README.md
 └── .gitignore
 ```
-## Imagens do projeto
+
+---
 
 ##  Telas do Sistema
 
 ### Tela de Login
 
-![Tela de Login| aqui temos como logar o usuario e escolher se ele é adm, egstor ou cuidador, cada um com suas permissões.](static/img/telas/login.png)
+Tela inicial onde o usuário realiza o login e seleciona seu perfil (ADM, Gestor ou Cuidador), cada um com permissões específicas.
 
-### Tela Inicial ADM
+![Tela de Login](static/img/telas/login.png)
 
-![Painel ADM | Aqui ficam todas as funções da aplicação.](static/img/telas/telaadm.png)
+---
 
-### Criar Quarto
+### Tela Inicial do Administrador
 
-![Tela de criar quartos | O cadastro de hospedes só vai funcionar corretamente caso tenho um quarto válido de selecionar quartos.](static/img/telas/cadaqua.png)
+Painel principal do sistema, com acesso a todas as funcionalidades administrativas.
 
-### Cadastro de Hóspede
+![Painel ADM](static/img/telas/telaadm.png)
 
-![Tela Cadastro de Hóspede](static/img/telas/cadahospe.png)
+---
 
-### Cadastro de Gestor
+### Cadastro de Quartos
 
-![Tela Cadastro de Gestores](static/img/telas/cadges.png)
+Cadastro de quartos disponíveis. O cadastro de hóspedes depende da existência de um quarto válido.
+
+![Criar Quarto](static/img/telas/cadaqua.png)
+
+---
+
+### Cadastro de Hóspedes
+
+Tela para registrar novos hóspedes no sistema.
+
+![Cadastro de Hóspede](static/img/telas/cadahospe.png)
+
+---
+
+### Cadastro de Gestores
+
+Tela exclusiva para cadastro de usuários do tipo Gestor.
+
+![Cadastro de Gestores](static/img/telas/cadges.png)
+
+---
 
 ### Cadastro de Cuidados
 
-![Tela Cadastro de Cuidados](static/img/telas/cadcui.png)
+Registro de cuidados e atividades relacionadas aos hóspedes.
 
-### Editar Hóspede
+![Cadastro de Cuidados](static/img/telas/cadcui.png)
 
-![Tela Editar Hóspede](static/img/telas/editarhos.png)
+---
 
-### Editar Colaborador
+### Edição de Hóspede
 
-![Tela Editar Colaborador](static/img/telas/editcolab.png)
+Permite atualizar os dados de um hóspede já cadastrado.
 
-### Atualiazado por
+![Editar Hóspede](static/img/telas/editarhos.png)
 
-![Tela Ver Colaboradores | Aqui aparecem todos os colaboradores do sistema, somente o adm pode ver isso](static/img/telas/atualiazadopor.png)
+---
+
+### Edição de Colaborador
+
+Atualização de informações de colaboradores do sistema.
+
+![Editar Colaborador](static/img/telas/editcolab.png)
+
+---
+
+### Atualizado por
+
+Indica o usuário responsável pela última alteração de registros.
+
+![Atualizado por](static/img/telas/atualizadopor.png)
+
+---
 
 ### Escolher Quarto
 
-![Tela Escolher Quarto](static/img/telas/telaescolherquarto.png)
+Tela para seleção de um quarto específico.
 
-### Hóspede no Quarto
+![Escolher Quarto](static/img/telas/telaescolherquarto.png)
 
-![Tela Hóspede no Quarto | Essa tela mostra os hóspedes que residem dentro do quarto selecionado](static/img/telas/hospedequa.png)
+---
+
+### Hóspedes por Quarto
+
+Exibe os hóspedes alocados no quarto selecionado.
+
+![Hóspede no Quarto](static/img/telas/hospedequa.png)
+
+---
 
 ### Visualizar Colaboradores
 
-![Tela Ver Colaboradores | Aqui aparecem todos os colaboradores do sistema, somente o adm pode ver isso](static/img/telas/vercolab.png)
+Lista de colaboradores cadastrados no sistema. Acesso exclusivo do administrador.
+
+![Visualizar Colaboradores](static/img/telas/vercolb.png)
+
+---
 
 ##  Instalação (Desenvolvimento)
 
-- Um adendo importante é que sempre que for finalizar o app(somente na versão.exe) saia pelo botão de sair na pagina de login, caso contrário o main ficará rodando em segundo plano no seu dispositivo oque pode ser incoveniênte para você
+>  **Importante:** ao utilizar a versão executável (.exe), finalize o sistema sempre pelo botão **Sair** na tela de login. Caso contrário, o processo pode continuar rodando em segundo plano no sistema operacional.
 
-## Link para a versão executável
-
-- https://github.com/samuelgk-commits/boa-viagem-lar-idosos/releases/tag/v1.0
-
-### 1. Clonar repositório
+### 1️ Clonar o repositório
 
 ```bash
 git clone <URL_DO_REPOSITORIO>
-cd nome-do-repositorio
+cd boa-viagem-lar-idosos
 ```
 
-### 2. Criar e ativar virtualenv
+---
+
+### 2️ Criar e ativar o ambiente virtual
 
 **Windows**:
+
 ```powershell
 python -m venv venv
 venv\Scripts\activate
 ```
 
 **Linux / macOS**:
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-**Desativar venv**:
+Para desativar:
+
 ```bash
 deactivate
 ```
 
-> Dica: se ao fechar o terminal o venv "desativa", isso é esperado: você precisa ativá-lo em cada nova sessão (ou configurar o interpretador do seu editor, ex. VS Code, para usar o venv automaticamente).
+---
 
-**import necessarios**
-
-pip install Flask sqlite PyInstaller peewee
-
-
-### 3. Rodar a aplicação
-
-Com o venv ativo e variáveis configuradas:
+### 3️⃣ Instalar dependências
 
 ```bash
-# opção 1 (se main.py inicializa app diretamente, caso esteja em desenvolvimento apenas tire o if do main.py que ele não iniciara a cada alteração)
-python main.py 
-
-
-# opção 2 (se estiver usando flask CLI)
-export FLASK_APP=main.py
-flask run
+pip install Flask peewee PyInstaller
 ```
 
-Acesse `http://127.0.0.1:5000`.
+---
 
-
-## Empacotar com PyInstaller 
-
-Gerar executável para Windows:
+### 4️Executar a aplicação
 
 ```bash
-pip install pyinstaller
+python main.py
+```
+
+Acesse no navegador:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+##  Versão Executável
+
+A versão executável do sistema (Windows) está disponível no link abaixo:
+
+ [https://github.com/samuelgk-commits/boa-viagem-lar-idosos/releases/tag/v1.0](https://github.com/samuelgk-commits/boa-viagem-lar-idosos/releases/tag/v1.0)
+
+---
+
+##  Empacotar com PyInstaller
+
+```bash
 pyinstaller --onefile --add-data "templates;templates" --add-data "static;static" --icon=icon.ico main.py
 ```
 
-Observações:
-- Ajuste `--add-data` conforme os caminhos do seu SO (no Windows separar com `;`, no Linux/macOS usar `:`).
-- Teste o executável em uma máquina limpa para verificar dependências estáticas (templates, static, arquivos de configuração).
-- No caso de querer implementar o mysql, ou outros bancos, confirme que as tabelas estão identicas aos models, caso esteja só mudar no Database/database.py.
+**Observações:**
 
+* Ajuste `--add-data` conforme o sistema operacional (`;` no Windows, `:` no Linux/macOS)
+* Teste o executável em uma máquina limpa
+* Para uso com MySQL ou outros bancos, garanta que as tabelas estejam alinhadas aos models em `Database/`
+
+---
 
 ##  Solução de Problemas Comuns
 
-- **Venv "some" ao fechar terminal**: ative novamente ao abrir uma nova sessão. Configure o IDE/editor para usar o interpretador do venv automaticamente (ex.: VS Code: `Python: Select Interpreter`).
+* **Ambiente virtual desativado**: ative novamente ao abrir o projeto. Configure o interpretador no editor (ex.: VS Code).
+* **Alterações em templates não aparecem**: limpe o cache do navegador (Ctrl+F5) e utilize o modo `debug` durante o desenvolvimento.
+* **Executável interfere no Flask**: certifique-se de encerrar o `.exe` corretamente; processos ativos podem aparecer no Gerenciador de Tarefas.
+* **Erro de conexão com banco de dados**: verifique credenciais, serviço ativo e configuração em `configuration.py`.
 
-- **Alterações em templates não aparecem**: limpe cache do navegador (Ctrl+F5) e certifique-se de que `debug=True` está ativado durante desenvolvimento para auto-reload. Caso tenha usado a versão .exe certifiquese de fechar com o botão na tela de login, ela pode rodar em segundo plano(oque pode ser visto no gerenciador de tarefas) isso pode interferir no flask identiifcar o codigo correto.
+---
 
-- **Erro de conexão com MySQL**: verifique host/porta/usuário/senha e se o serviço MySQL está em execução. Teste a conexão com um cliente (MySQL Workbench ou `mysql` CLI).
+##  Licença
 
-- **Rotas não atualizam**: confirme que você está executando a versão atual do código e que não há múltiplas instâncias rodando na mesma porta.
+Este projeto está licenciado sob a licença **MIT**. Consulte o arquivo `LICENSE` para mais informações.
 
+---
 
-## Licença
+##  Contato
 
-Este projeto está licenciado sob a licença **MIT**.
+Em caso de dúvidas ou sugestões, você pode entrar em contato para suporte e ajustes do projeto.
 
-## Contato
+---
 
-Se quiser, me mande o código ou trechos específicos (ex.: `main.py`, `configuration.py` ou exemplos de rotas) nesse numero (47)991910356 que eu te ajudo a ajustar e configurar para rodar corretamente.
-
-
-
+**Lar Boa Viagem** — Sistema de Gerenciamento para Instituições de Longa Permanência para Idosos
